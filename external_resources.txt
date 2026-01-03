@@ -1,0 +1,20 @@
+EXTERNAL RESOURCES LIST
+
+1. FONTS (Google Fonts)
+   - Inter (https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;700&display=swap)
+   - Playfair Display
+
+2. IMAGES (in /assets folder)
+   - diagonal-golden-line-glass-cube-on-black-background.jpg (Used as body background in style.css)
+   - png-clipart-computer-icons-logo-github-github-logo-logo-computer-program-removebg-preview.png (Present in assets folder, likely unused in current code)
+
+3. ICONS (Inline SVGs in index.html)
+   - Email Icon
+   - Phone Icon
+   - Location Icon
+   - GitHub Icon (Social Links)
+   - LinkedIn Icon (Social Links)
+   - Twitter Icon (Social Links)
+   - Dribbble Icon (Social Links)
+
+Note: The icons are embedded directly into the HTML code as SVG paths.

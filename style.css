@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;700&display=swap');
+
 /* ========== Reset ========== */
 /* The asterisk (*) selector selects all elements in the document. */
 * {
@@ -29,11 +31,9 @@ body {
 
   /* Sets the background with two layers: a gradient overlay and an image. */
   /* Explanation: The linear-gradient creates a dark overlay (30% to 40% opacity black) on top of the image to make text readable. */
-  background: linear-gradient(
-      135deg,
+  background: linear-gradient(135deg,
       rgba(0, 0, 0, 0.3) 0%,
-      rgba(0, 0, 0, 0.4) 100%
-    ),
+      rgba(0, 0, 0, 0.4) 100%),
     url("assets/diagonal-golden-line-glass-cube-on-black-background-illustration-of-website-banner-poster-sign-corporate-business-social-media-post-billboard-agency-advertising-media-motion-video-animation-wave-vector.jpg");
 
   /* Ensures the background image covers the entire container without stretching. */
@@ -925,6 +925,10 @@ section {
 .contact-icon {
   width: 24px;
   height: 24px;
+  /* Invert color to white for dark theme if icons are black. */
+  /* If icons are colored, you might not want this filter. */
+  /* Assuming icons are black PNGs and need to be white on dark background. */
+  filter: invert(1);
 }
 
 /* Container for social media links. */
@@ -947,10 +951,13 @@ section {
   color: #ffffff;
 }
 
-/* SVG icon inside social link. */
-.social-link svg {
+/* Image icon inside social link. */
+.social-link img {
   width: 24px;
   height: 24px;
+  /* Invert color to white assuming black icons. */
+  filter: invert(1);
+  transition: all 0.3s ease;
 }
 
 /* Hover effect for social link. */
@@ -1004,8 +1011,8 @@ section {
 }
 
 /* Moves label up when input is focused or has text. */
-.form-input:focus + .form-label,
-.form-input:not(:placeholder-shown) + .form-label {
+.form-input:focus+.form-label,
+.form-input:not(:placeholder-shown)+.form-label {
   top: -10px;
   font-size: 0.85rem;
   color: #000000;
@@ -1045,6 +1052,7 @@ textarea.form-input {
 /* ========== Responsive ========== */
 /* Media query for tablets and smaller screens (max-width: 968px). */
 @media (max-width: 968px) {
+
   /* Stacks hero content vertically. */
   .hero-content {
     grid-template-columns: 1fr;
@@ -1086,6 +1094,7 @@ textarea.form-input {
 
 /* Media query for mobile devices (max-width: 768px). */
 @media (max-width: 768px) {
+
   /* Styles for mobile navigation menu. */
   .nav-menu {
     position: fixed;
@@ -1119,6 +1128,7 @@ textarea.form-input {
 
 /* Media query for very small screens (max-width: 480px). */
 @media (max-width: 480px) {
+
   /* Further reduces circle size. */
   .profile-circle {
     width: 250px;
