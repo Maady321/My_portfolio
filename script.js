@@ -8,45 +8,51 @@ const navLinks = document.querySelectorAll(".nav-link");
 
 // Adds a click event listener to the hamburger icon
 // Explanation: Toggles the mobile menu visibility when the icon is clicked
-hamburger.addEventListener("click", () => {
-  // Toggles the 'active' class on the nav menu
-  // Explanation: CSS uses this class to show/hide the menu
-  navMenu.classList.toggle("active");
+if (hamburger) {
+  hamburger.addEventListener("click", () => {
+    // Toggles the 'active' class on the nav menu
+    // Explanation: CSS uses this class to show/hide the menu
+    navMenu.classList.toggle("active");
 
-  // Animate hamburger to X
-  // Selects the three span lines inside the hamburger
-  const spans = hamburger.querySelectorAll("span");
+    // Animate hamburger to X
+    // Selects the three span lines inside the hamburger
+    const spans = hamburger.querySelectorAll("span");
 
-  // Checks if the menu is now open (has 'active' class)
-  if (navMenu.classList.contains("active")) {
-    // Rotates top line 45 degrees
-    spans[0].style.transform = "rotate(45deg) translate(5px, 5px)";
-    // Hides the middle line
-    spans[1].style.opacity = "0";
-    // Rotates bottom line -45 degrees
-    spans[2].style.transform = "rotate(-45deg) translate(7px, -6px)";
-  } else {
-    // Resets lines to original position (parallel)
-    spans[0].style.transform = "none";
-    spans[1].style.opacity = "1";
-    spans[2].style.transform = "none";
-  }
-});
+    // Checks if the menu is now open (has 'active' class)
+    if (navMenu.classList.contains("active")) {
+      // Rotates top line 45 degrees
+      spans[0].style.transform = "rotate(45deg) translate(5px, 5px)";
+      // Hides the middle line
+      spans[1].style.opacity = "0";
+      // Rotates bottom line -45 degrees
+      spans[2].style.transform = "rotate(-45deg) translate(7px, -6px)";
+    } else {
+      // Resets lines to original position (parallel)
+      spans[0].style.transform = "none";
+      spans[1].style.opacity = "1";
+      spans[2].style.transform = "none";
+    }
+  });
+}
 
 // Close mobile menu when clicking on a link
 // Explanation: Iterates through each link and adds a click listener
-navLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    // Removes 'active' class to hide menu
-    navMenu.classList.remove("active");
+if (navMenu) {
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      // Removes 'active' class to hide menu
+      navMenu.classList.remove("active");
 
-    // Resets hamburger icon animation
-    const spans = hamburger.querySelectorAll("span");
-    spans[0].style.transform = "none";
-    spans[1].style.opacity = "1";
-    spans[2].style.transform = "none";
+      // Resets hamburger icon animation
+      if (hamburger) {
+        const spans = hamburger.querySelectorAll("span");
+        spans[0].style.transform = "none";
+        spans[1].style.opacity = "1";
+        spans[2].style.transform = "none";
+      }
+    });
   });
-});
+}
 
 // ========== Navbar Scroll Effect ==========
 // Variable to store the previous scroll position
