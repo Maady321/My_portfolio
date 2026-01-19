@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Art of Clean Code | Sabari Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            padding-left: 0;
+        }
+
+        .blog-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #ffffff;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .back-btn:hover {
+            transform: translateX(-5px);
+        }
+
+        .article-content {
+            background: var(--bg-card);
+            padding: 3rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .date {
+            color: #ffffff;
+            margin-bottom: 2rem;
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        h2 {
+            color: var(--text-main);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-family: var(--font-heading);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="blog-container">
+        <a href="index.html" class="back-btn">← Back to Home</a>
+        <article class="article-content">
+            <h1>The Art of Clean Code</h1>
+            <span class="date">January 02, 2026</span>
+            <p>Code is read much more often than it is written. Therefore, writing code that is easy to understand for
+                humans is just as important as writing code that machines can execute.</p>
+            <h2>Naming Matters</h2>
+            <p>The variable name <code>d</code> is terrible. The variable name <code>elapsedTimeInDays</code> is
+                excellent. Taking the time to name variables, functions, and classes descriptively saves hours of
+                debugging later on.</p>
+            <p>Clean code is about intent. Your code should tell a story about what it is doing.</p>
+        </article>
+    </div>
+</body>
+
+</html>

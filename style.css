@@ -1,1157 +1,1115 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;700&display=swap');
+/* =========================================
+   NAVY & ORANGE-RED PORTFOLIO THEME
+   Style: Clean, Modern, Premium Dark
+   ========================================= */
 
-/* ========== Reset ========== */
-/* The asterisk (*) selector selects all elements in the document. */
+/* --- Variables --- */
+:root {
+  /* Colors */
+  --bg-dark: #0f172a;
+  /* Deep Navy / Slate 900 */
+  --bg-card: #1e293b;
+  /* Lighter Navy / Slate 800 */
+  --text-main: #ffffff;
+  /* Pure White */
+  --text-muted: #ffffff;
+  /* Pure White (as requested) */
+
+  /* Accents */
+  --accent-orange: #f97316;
+  --accent-red: #ef4444;
+  --gradient-halo: linear-gradient(135deg, #f97316, #ef4444);
+
+  /* Spacing & Layout */
+  --font-heading: 'Manrope', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --radius: 12px;
+  --container-width: 1100px;
+  --nav-height: 80px;
+}
+
+/* --- Reset --- */
 * {
-  /* Sets the margin of all elements to 0 to remove default browser spacing. */
-  /* Explanation: This ensures we start with a clean slate for spacing. */
   margin: 0;
-
-  /* Sets the padding of all elements to 0. */
-  /* Explanation: Removes default internal spacing from elements like lists or inputs. */
   padding: 0;
-
-  /* Sets the box model to border-box. */
-  /* Explanation: This means padding and border are included in the element's total width/height, making sizing easier to manage. */
   box-sizing: border-box;
 }
 
-/* Selects the root html element. */
 html {
-  /* Enables smooth scrolling behavior for the entire page. */
-  /* Explanation: When clicking anchor links, the page scrolls smoothly instead of jumping instantly. */
   scroll-behavior: smooth;
 }
 
-/* Selects the body element, which contains all visible content. */
-body {
-  /* Sets the primary font family to 'Inter' with a fallback to sans-serif. */
-  /* Explanation: Defines the typography for the website text. */
-  font-family: "Inter", sans-serif;
-
-  /* Sets the background with two layers: a gradient overlay and an image. */
-  /* Explanation: The linear-gradient creates a dark overlay (30% to 40% opacity black) on top of the image to make text readable. */
-  background: linear-gradient(135deg,
-      rgba(0, 0, 0, 0.3) 0%,
-      rgba(0, 0, 0, 0.4) 100%),
-    url("assets/diagonal-golden-line-glass-cube-on-black-background-illustration-of-website-banner-poster-sign-corporate-business-social-media-post-billboard-agency-advertising-media-motion-video-animation-wave-vector.jpg");
-
-  /* Ensures the background image covers the entire container without stretching. */
-  /* Explanation: The image will be resized to cover the screen fully, cropping if necessary. */
-  background-size: cover;
-
-  /* Centers the background image. */
-  /* Explanation: Keeps the focal point of the image in the center of the screen. */
-  background-position: center;
-
-  /* Fixes the background image in place during scrolling. */
-  /* Explanation: Creates a parallax-like effect where the content scrolls over a stationary background. */
-  background-attachment: fixed;
-
-  /* Prevents the background image from repeating. */
-  /* Explanation: Ensures the image is shown only once. */
-  background-repeat: no-repeat;
-
-  /* Sets the default text color to white. */
-  /* Explanation: White text provides good contrast against the dark background. */
-  color: #ffffff;
-
-  /* Sets the line height to 1.6. */
-  /* Explanation: Increases space between lines of text for better readability. */
-  line-height: 1.6;
-}
-
-/* Selects all anchor (link) elements. */
-a {
-  /* Removes the default underline from links. */
-  /* Explanation: Gives links a cleaner, more modern look. */
-  text-decoration: none;
-
-  /* Inherits the text color from the parent element. */
-  /* Explanation: Links will use the text color defined in their container instead of the default blue. */
-  color: inherit;
-}
-
-/* Selects all unordered list elements. */
-ul {
-  /* Removes default bullet points from lists. */
-  /* Explanation: Useful for creating custom lists or navigation menus without bullets. */
-  list-style: none;
-}
-
-/* Selects all image elements. */
-img {
-  /* Ensures images never exceed the width of their container. */
-  /* Explanation: Makes images responsive so they don't overflow on smaller screens. */
-  max-width: 100%;
-
-  /* Displays images as block elements. */
-  /* Explanation: Removes the small gap often seen below inline images. */
-  display: block;
-}
-
-/* Selects elements with the class 'container'. */
-.container {
-  /* Sets a maximum width of 1200px. */
-  /* Explanation: Prevents content from stretching too wide on large screens. */
-  max-width: 1200px;
-
-  /* Centers the container horizontally. */
-  /* Explanation: '0' for top/bottom margin, 'auto' calculates left/right margins equally. */
-  margin: 0 auto;
-
-  /* Adds 2rem padding to the left and right. */
-  /* Explanation: Ensures content doesn't touch the edges of the screen on smaller devices. */
-  padding: 0 2rem;
-}
-
-/* ========== Navigation ========== */
-/* Styles for the navigation bar. */
-.navbar {
-  /* Fixes the navbar to the top of the viewport. */
-  /* Explanation: The navbar stays visible even when scrolling down the page. */
-  position: fixed;
-
-  /* Positions the navbar at the very top. */
-  top: 0;
-
-  /* Stretches the navbar to the left edge. */
-  left: 0;
-
-  /* Stretches the navbar to the right edge. */
-  right: 0;
-
-  /* Sets a vertical gradient background from black to dark gray. */
-  /* Explanation: Adds depth to the navbar background. */
-  background: linear-gradient(180deg, #000000 0%, #464545 100%);
-
-  /* Adds a 2px solid black border at the bottom. */
-  /* Explanation: Separates the navbar from the rest of the page content. */
-  border-bottom: 2px solid #000000;
-
-  /* Sets the stack order to 1000. */
-  /* Explanation: Ensures the navbar stays on top of other elements. */
-  z-index: 1000;
-
-  /* Adds a subtle shadow below the navbar. */
-  /* Explanation: Creates a floating effect and separation from content. */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Styles for the inner container of the navbar. */
-.nav-container {
-  /* Limits width to 1200px. */
-  max-width: 1200px;
-
-  /* Centers the container. */
-  margin: 0 auto;
-
-  /* Adds padding: 1rem top/bottom, 2rem left/right. */
-  padding: 1rem 2rem;
-
-  /* Enables Flexbox layout. */
-  /* Explanation: Allows easy alignment of logo and menu items. */
-  display: flex;
-
-  /* Pushes child elements to opposite ends (Logo left, Menu right). */
-  justify-content: space-between;
-
-  /* Vertically centers items within the navbar. */
-  align-items: center;
-}
-
-/* Styles for the logo text. */
-.logo {
-  /* Sets font size to 1.5rem (approx 24px). */
-  font-size: 1.5rem;
-
-  /* Sets font weight to extra bold (800). */
-  font-weight: 800;
-
-  /* Uses the display font 'Playfair Display'. */
-  font-family: "Playfair Display", serif;
-
-  /* Adds a 2px solid black border around the logo. */
-  border: 2px solid #000000;
-
-  /* Adds padding inside the border. */
-  padding: 0.5rem 1rem;
-
-  /* Smoothly transitions all property changes over 0.3 seconds. */
-  /* Explanation: Makes hover effects look smooth. */
-  transition: all 0.3s ease;
-}
-
-/* Styles for the logo when hovered. */
-.logo:hover {
-  /* Makes the background transparent. */
-  background: transparent;
-
-  /* Changes text color to light gray. */
-  color: #a3a3a3;
-
-  /* Scales the logo up by 5%. */
-  /* Explanation: Creates a subtle 'pop' effect on interaction. */
-  transform: scale(1.05);
-}
-
-/* Styles for the navigation menu list. */
-.nav-menu {
-  /* Uses Flexbox to arrange links in a row. */
-  display: flex;
-
-  /* Adds 2rem space between menu items. */
-  gap: 2rem;
-
-  /* Vertically centers the menu items. */
-  align-items: center;
-}
-
-/* Styles for individual navigation links. */
-.nav-link {
-  /* Sets positioning context for the pseudo-element underline. */
-  position: relative;
-
-  /* Sets font weight to medium (500). */
-  font-weight: 500;
-
-  /* Adds vertical padding to increase clickable area. */
-  padding: 0.5rem 0;
-}
-
-/* Creates an underline effect for nav links using a pseudo-element. */
-.nav-link::after {
-  /* Required content property for pseudo-elements. */
-  content: "";
-
-  /* Absolute positioning relative to the .nav-link. */
-  position: absolute;
-
-  /* Positions line at the bottom. */
-  bottom: 0;
-
-  /* Starts line from the left. */
-  left: 0;
-
-  /* Initially sets width to 0 (invisible). */
-  width: 0;
-
-  /* Sets the thickness of the line to 2px. */
-  height: 2px;
-
-  /* Sets the line color to black. */
-  background: #000000;
-
-  /* Animates the width change over 0.3 seconds. */
-  transition: width 0.3s ease;
-}
-
-/* Expands the underline when hovering over the link. */
-.nav-link:hover::after {
-  /* Expands width to 100% of the link text. */
-  /* Explanation: Creates a growing underline animation. */
-  width: 100%;
-}
-
-/* Styles for the hamburger menu icon (hidden on desktop). */
-.hamburger {
-  /* Hidden by default. */
-  display: none;
-
-  /* Arranges bars vertically. */
-  flex-direction: column;
-
-  /* Adds 5px space between bars. */
-  gap: 5px;
-
-  /* Changes cursor to pointer to indicate clickability. */
-  cursor: pointer;
-}
-
-/* Styles for the bars inside the hamburger icon. */
-.hamburger span {
-  /* Sets width of each bar. */
-  width: 25px;
-
-  /* Sets height of each bar. */
-  height: 2px;
-
-  /* Sets color of bars to black. */
-  background: #000000;
-
-  /* Adds smooth transition for potential animations. */
-  transition: all 0.3s ease;
-}
-
-/* ========== Hero Section ========== */
-/* Styles for the main hero section. */
-.hero {
-  /* Sets minimum height to 100% of the viewport height. */
-  /* Explanation: Ensures the hero section covers the full screen. */
-  min-height: 100vh;
-
-  /* Uses Flexbox to center content. */
-  display: flex;
-
-  /* Vertically centers content. */
-  align-items: center;
-
-  /* Horizontally centers content. */
-  justify-content: center;
-
-  /* Adds padding: 6rem top/bottom, 2rem left/right. */
-  padding: 6rem 2rem;
-
-  /* Adds top margin to account for the fixed navbar height. */
-  margin-top: 80px;
-}
-
-/* Layout for hero content. */
-.hero-content {
-  /* Limits width to 1200px. */
-  max-width: 1200px;
-
-  /* Ensures it takes full available width. */
-  width: 100%;
-
-  /* Uses CSS Grid layout. */
-  display: grid;
-
-  /* Creates two columns: left is 1.5x wider than right. */
-  /* Explanation: Text takes more space than the image. */
-  grid-template-columns: 1.5fr 1fr;
-
-  /* Adds 4rem gap between columns. */
-  gap: 4rem;
-
-  /* Vertically centers grid items. */
-  align-items: center;
-}
-
-/* Styles for the main hero headline. */
-.hero-title {
-  /* Uses display font. */
-  font-family: "Playfair Display", serif;
-
-  /* Responsive font size using clamp(). */
-  /* Explanation: Min 3rem, ideal 8vw, max 6rem. Scales with screen size. */
-  font-size: clamp(3rem, 8vw, 6rem);
-
-  /* Bold font weight. */
-  font-weight: 700;
-
-  /* Tight line height for large text. */
-  line-height: 1.1;
-
-  /* Adds space below the title. */
-  margin-bottom: 2rem;
-}
-
-/* Styles for lines within the title. */
-.hero-title .line {
-  /* Forces each line to be on a new row. */
-  display: block;
-}
-
-/* Styles for accented text in the title. */
-.hero-title .accent {
-  /* Sets accent color to dark gray. */
-  color: #404040;
-}
-
-/* Styles for the subtitle. */
-.hero-subtitle {
-  /* Responsive font size. */
-  font-size: clamp(1.2rem, 3vw, 1.8rem);
-
-  /* Light font weight. */
-  font-weight: 300;
-
-  /* Space below. */
-  margin-bottom: 1rem;
-
-  /* Increases spacing between letters. */
-  letter-spacing: 2px;
-
-  /* Converts text to uppercase. */
-  text-transform: uppercase;
-}
-
-/* Styles for the hero description paragraph. */
-.hero-description {
-  /* Responsive font size. */
-  font-size: clamp(1rem, 2vw, 1.2rem);
-
-  /* Sets text color to medium gray. */
-  color: #525252;
-
-  /* Space below. */
-  margin-bottom: 2rem;
-
-  /* Limits line width for readability. */
-  max-width: 600px;
-}
-
-/* Container for Call-to-Action buttons. */
-.hero-cta {
-  /* Uses Flexbox to arrange buttons. */
-  display: flex;
-
-  /* Adds space between buttons. */
-  gap: 1rem;
-
-  /* Allows buttons to wrap on small screens. */
-  flex-wrap: wrap;
-}
-
-/* Base styles for all buttons. */
-.btn {
-  /* Adds padding inside the button. */
-  padding: 1rem 2rem;
-
-  /* Semi-bold font weight. */
-  font-weight: 600;
-
-  /* Adds 2px solid black border. */
-  border: 2px solid #000000;
-
-  /* Smooth transition for hover effects. */
-  transition: all 0.3s ease;
-
-  /* Changes cursor to pointer on hover. */
-  cursor: pointer;
-
-  /* Sets font size. */
-  font-size: 1rem;
-
-  /* Uppercase text. */
-  text-transform: uppercase;
-
-  /* Spacing between letters. */
-  letter-spacing: 1px;
-}
-
-/* Styles for primary button (filled). */
-.btn-primary {
-  /* Black background. */
-  background: #000000;
-
-  /* White text. */
-  color: #ffffff;
-}
-
-/* Hover state for primary button. */
-.btn-primary:hover {
-  /* Changes background to dark gray. */
-  background: #404040;
-
-  /* Keeps text white. */
-  color: #ffffff;
-
-  /* Moves button up slightly. */
-  transform: translateY(-2px);
-
-  /* Adds shadow for depth. */
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-/* Styles for secondary button (outlined). */
-.btn-secondary {
-  /* Transparent background. */
-  background: transparent;
-
-  /* White text. */
-  color: #ffffff;
-
-  /* White border. */
-  border: 2px solid #ffffff;
-}
-
-/* Hover state for secondary button. */
-.btn-secondary:hover {
-  /* White background. */
-  background: #ffffff;
-
-  /* Black text. */
-  color: #000000;
-
-  /* Moves button up slightly. */
-  transform: translateY(-2px);
-
-  /* Adds shadow. */
-  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
-}
-
-/* Utility class to make button full width. */
-.btn-full {
-  width: 100%;
-}
-
-/* Container for the hero image/graphic. */
-.hero-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Container for the animated circles. */
-.profile-circle {
-  position: relative;
-  width: 400px;
-  height: 400px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Common styles for all circle layers. */
-.circle-outer,
-.circle-middle,
-.circle-inner {
-  /* Absolute positioning to stack them. */
-  position: absolute;
-
-  /* Makes them perfectly round. */
-  border-radius: 50%;
-}
-
-/* Styles for the outer circle. */
-.circle-outer {
-  width: 100%;
-  height: 100%;
-  border: 2px solid #000000;
-}
-
-/* Styles for the middle circle. */
-.circle-middle {
-  width: 70%;
-  height: 70%;
-  border: 2px solid #a3a3a3;
-}
-
-/* Styles for the inner circle (solid). */
-.circle-inner {
-  width: 40%;
-  height: 40%;
-  background: #000000;
-}
-
-/* Styles for the scroll indicator arrow. */
-.scroll-indicator {
-  position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  /* Centers element horizontally. */
-  transform: translateX(-50%);
-}
-
-/* The line inside the scroll indicator. */
-.scroll-indicator span {
-  display: block;
-  width: 2px;
-  height: 50px;
-  background: #000000;
-}
-
-/* ========== Sections ========== */
-/* General styles for all sections. */
-section {
-  /* Large vertical padding. */
-  padding: 6rem 0;
-
-  /* Separator line between sections. */
-  border-bottom: 2px solid #000000;
-}
-
-/* Header area for each section. */
-.section-header {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  margin-bottom: 4rem;
-}
-
-/* Large number styling (01, 02, etc.). */
-.section-number {
-  font-size: clamp(3rem, 6vw, 5rem);
-  font-weight: 800;
-  font-family: "Playfair Display", serif;
-  color: #e5e5e5;
-  line-height: 1;
-}
-
-/* Section title text. */
-.section-title {
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 700;
-  font-family: "Playfair Display", serif;
-}
-
-/* ========== About Section ========== */
-/* Background for About section. */
-.about {
-  /* Gradient from black to dark gray. */
-  background: linear-gradient(135deg, #000000 0%, #585858 100%);
-}
-
-/* Grid layout for About content. */
-.about-content {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  gap: 4rem;
-  align-items: center;
-}
-
-/* Lead paragraph in About section. */
-.about-text .lead {
-  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
-  font-weight: 500;
-  margin-bottom: 2rem;
-  line-height: 1.6;
-  color: #ffffff;
-}
-
-/* Regular paragraphs in About section. */
-.about-text p {
-  margin-bottom: 1rem;
-  color: #e5e5e5;
-  font-size: clamp(1rem, 1.5vw, 1.1rem);
-}
-
-/* Grid for statistics cards. */
-.stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin-top: 4rem;
-}
-
-/* Individual statistic card. */
-.stat-item {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  border: 2px solid #000000;
-  padding: 2rem;
-  transition: all 0.3s ease;
-  /* Dark background for cards. */
-  background: #0c0c0c;
-}
-
-/* Hover effect for statistic card. */
-.stat-item:hover {
-  background: #404040;
-  color: #000000;
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-}
-
-/* Number in statistic card. */
-.stat-number {
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 800;
-  font-family: "Playfair Display", serif;
-  line-height: 1;
-}
-
-/* Label text in statistic card. */
-.stat-label {
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-/* Frame for profile image. */
-.image-frame {
-  position: relative;
-  width: 100%;
-  max-width: 400px;
-  aspect-ratio: 4/4;
-  border: 2px solid #000000;
-  margin: 0 auto;
-  background: #e5e5e5;
+body.loading {
   overflow: hidden;
 }
 
-/* Decorative inner border for image frame. */
-.frame-decoration {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  right: 1rem;
-  bottom: 1rem;
-  border: 2px solid #a3a3a3;
+/* --- Boot Loader --- */
+#boot-loader {
+  position: fixed;
+  inset: 0;
+  background-color: var(--bg-dark);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.8s ease, visibility 0.8s;
 }
 
-/* Ensure profile image fills the frame and crops cleanly */
-.image-frame .profile-photo {
+#boot-loader.fade-out {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.boot-container {
+  width: 90%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.boot-terminal {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  min-height: 180px;
+}
+
+.terminal-header {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 1.2rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.dot.red {
+  background: #ff5f56;
+}
+
+.dot.amber {
+  background: #ffbd2e;
+}
+
+.dot.green {
+  background: #27c93f;
+}
+
+#boot-text {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.boot-line {
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.status-ok {
+  color: var(--accent-orange);
+  font-weight: 700;
+  margin-right: 8px;
+}
+
+.status-info {
+  color: #60a5fa;
+  font-weight: 700;
+  margin-right: 8px;
+}
+
+.status-success {
+  color: #34d399;
+  font-weight: 700;
+  margin-right: 8px;
+}
+
+.boot-progress {
   width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  width: 0%;
   height: 100%;
-  object-fit: cover;
+  background: var(--gradient-halo);
+  transition: width 1.5s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: 0.3s;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
   display: block;
 }
 
-/* ========== Skills Section ========== */
-/* Grid layout for skills categories. */
-.skills-grid {
+/* --- Container --- */
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* --- Watermark Title --- */
+.page-watermark {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 0.9rem;
+  opacity: 0.3;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* --- Navigation --- */
+/* --- Sidebar Navigation --- */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 260px;
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(10px);
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: none;
+  z-index: 1000;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 3rem;
+}
+
+.logo {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.nav-links li {
+  width: 100%;
+}
+
+.nav-links a {
+  display: block;
+  font-size: 1.1rem;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  color: var(--text-muted);
+  transition: all 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  /* White on hover */
+  transform: translateX(5px);
+}
+
+/* Mobile Toggle (Hidden on Desktop) */
+.mobile-toggle {
+  display: none;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+/* Disable old overlay */
+
+/* --- Content Offset --- */
+body {
+  padding-left: 260px;
+  /* Offset for Sidebar */
+}
+
+/* --- Responsive Sidebar (Mobile) --- */
+@media (max-width: 900px) {
+  body {
+    padding-left: 0;
+  }
+
+  .navbar {
+    width: 100%;
+    height: var(--nav-height);
+    flex-direction: row;
+    padding: 0 1.5rem;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    align-items: center;
+  }
+
+  .nav-content {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  /* Hide links on mobile */
+  .mobile-toggle {
+    display: flex;
+  }
+
+  /* Show hamburger */
+
+  /* Re-enable Mobile Menu Overlay Logic */
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: var(--nav-height);
+    left: 0;
+    width: 100%;
+    height: auto;
+    background: var(--bg-card);
+    padding: 2rem;
+    flex-direction: column;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .mobile-menu.active {
+    display: flex;
+  }
+}
+
+/* --- Hero Section --- */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-dark);
+  /* Mesh Gradient Background */
+  background:
+    radial-gradient(circle at 80% 20%, rgba(249, 115, 22, 0.08), transparent 40%),
+    radial-gradient(circle at 20% 80%, rgba(239, 68, 68, 0.08), transparent 40%),
+    var(--bg-dark);
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  mask-image: radial-gradient(circle at center, black, transparent 80%);
+  pointer-events: none;
+}
+
+.hero-grid {
   display: grid;
-  /* Auto-fit columns with min width 280px. */
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: 1.2fr 1.1fr;
+  align-items: center;
+  gap: 4rem;
+  width: 100%;
+}
+
+.hero-text {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-start;
+  text-align: left;
+  max-width: 600px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: flex-start;
+  margin-top: 1rem;
+}
+
+.greeting {
+  color: #ffffff;
+  /* Greeting in White */
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: 4rem;
+  line-height: 1;
+  font-weight: 800;
+}
+
+/* Hero Visual & Profile Photo Editorial Frame */
+.hero-visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.photo-editorial-frame {
+  position: relative;
+  width: 340px;
+  height: 420px;
+  border: 10px solid var(--bg-card);
+  border-radius: 4px;
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  transform: rotate(2deg);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  background: var(--bg-card);
+}
+
+.photo-editorial-frame:hover {
+  transform: rotate(0deg) scale(1.02) translateY(-10px);
+  border-color: #ffffff;
+}
+
+.profile-photo-editorial {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.95);
+  transition: all 0.6s ease;
+}
+
+.photo-editorial-frame:hover .profile-photo-editorial {
+  filter: saturate(1.1);
+}
+
+.frame-accent {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  width: 50px;
+  height: 50px;
+  border-top: 4px solid var(--accent-orange);
+  border-right: 4px solid var(--accent-orange);
+  z-index: 2;
+  transition: all 0.4s ease;
+}
+
+.photo-editorial-frame:hover .frame-accent {
+  top: 10px;
+  right: 10px;
+  width: 80px;
+  height: 80px;
+  opacity: 0.5;
+}
+
+/* Decorative Orbs & Vignette */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, transparent, rgba(15, 23, 42, 0.3));
+  pointer-events: none;
+}
+
+.glow-orb {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: -1;
+  opacity: 0.15;
+  animation: pulse 8s infinite alternate;
+}
+
+.orb-1 {
+  background: var(--accent-orange);
+  top: 10%;
+  right: 10%;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1) translate(0, 0);
+    opacity: 0.1;
+  }
+
+  100% {
+    transform: scale(1.2) translate(20px, 20px);
+    opacity: 0.2;
+  }
+}
+
+
+.role-title {
+  font-size: 1.8rem;
+  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+.hero-description {
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 550px;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: flex-start;
+  margin-top: 1rem;
+}
+
+/* Premium Buttons */
+.btn {
+  padding: 1rem 2.2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.85rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--gradient-halo);
+  color: white;
+  box-shadow: 0 8px 25px rgba(249, 115, 22, 0.25);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(249, 115, 22, 0.45);
+}
+
+.btn-outline {
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-3px);
+}
+
+
+
+/* Right Visual (Halo) */
+
+/* --- Scroll Animations --- */
+.hidden {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Typing Cursor --- */
+.cursor {
+  display: inline-block;
+  width: 3px;
+  background-color: var(--accent-orange);
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+/* --- About Section --- */
+.section {
+  padding: 6rem 0;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  position: relative;
+  display: inline-block;
+}
+
+/* Underline effect */
+.section-title::after {
+  content: '';
+  display: block;
+  width: 50%;
+  height: 4px;
+  background: var(--gradient-halo);
+  margin-top: 0.5rem;
+  border-radius: 2px;
+}
+
+.about-grid {
+  display: flex;
+  justify-content: center;
+  max-width: 900px;
+  /* Increased from 800px/grid */
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Feature List (Left) */
+/* Feature List (Left) REMOVED */
+.about-features,
+.feature-item,
+.icon-box,
+.feature-text {
+  display: none;
+}
+
+/* Bio Card Style */
+.about-bio {
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 3px solid var(--accent-orange);
+  /* Accent Top */
+  padding: 3rem;
+  border-radius: var(--radius);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  /* Subtle layout tweaks */
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  /* Clean readable size */
+  line-height: 1.7;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Add a subtle glow behind the card content */
+.about-bio::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 50% 50%, rgba(249, 115, 22, 0.05), transparent 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.about-bio>* {
+  position: relative;
+  z-index: 1;
+}
+
+/* --- Pivot Timeline --- */
+.pivot {
+  background: radial-gradient(circle at 10% 10%, rgba(249, 115, 22, 0.03), transparent 40%),
+    radial-gradient(circle at 90% 90%, rgba(239, 68, 68, 0.03), transparent 40%),
+    var(--bg-dark);
+}
+
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 4rem auto 0;
+  padding: 2rem 0;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.timeline-item:nth-child(odd) {
+  left: 0;
+  text-align: right;
+  padding-right: 3rem;
+}
+
+.timeline-item:nth-child(even) {
+  left: 50%;
+  text-align: left;
+  padding-left: 3rem;
+}
+
+.timeline-dot {
+  position: absolute;
+  top: 2.5rem;
+  width: 16px;
+  height: 16px;
+  background: var(--gradient-halo);
+  border-radius: 50%;
+  border: 4px solid var(--bg-dark);
+  z-index: 2;
+  box-shadow: 0 0 10px rgba(249, 115, 22, 0.5);
+}
+
+.timeline-item:nth-child(odd) .timeline-dot {
+  right: -8px;
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+  left: -8px;
+}
+
+.timeline-content {
+  background: var(--bg-card);
+  padding: 2rem;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.timeline-content:hover {
+  transform: translateY(-5px);
+  border-color: rgba(249, 115, 22, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.timeline-date {
+  display: block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent-orange);
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.timeline-content h3 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.timeline-content p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.timeline-tag {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.3rem 0.8rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* --- Responsive Timeline --- */
+@media (max-width: 768px) {
+  .timeline-line {
+    left: 30px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding-left: 70px !important;
+    padding-right: 0 !important;
+    text-align: left !important;
+  }
+
+  .timeline-item:nth-child(even) {
+    left: 0;
+  }
+
+  .timeline-dot {
+    left: 22px !important;
+  }
+}
+
+/* --- Language Skills --- */
+.language-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.lang-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.lang-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(249, 115, 22, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.lang-icon {
+  width: 60px;
+  height: 60px;
+  background: rgba(249, 115, 22, 0.1);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-orange);
+  transition: all 0.3s ease;
+}
+
+.lang-card:hover .lang-icon {
+  transform: scale(1.1);
+  background: var(--gradient-halo);
+  color: white;
+}
+
+.lang-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  margin: 0;
+  color: var(--text-main);
+}
+
+.lang-badge {
+  padding: 0.4rem 1.2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 30px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent-orange);
+  border: 1px solid rgba(249, 115, 22, 0.2);
+  transition: all 0.3s ease;
+}
+
+.lang-card:hover .lang-badge {
+  background: rgba(249, 115, 22, 0.1);
+  border-color: var(--accent-orange);
+}
+
+
+
+/* --- Projects Section --- */
+.projects-grid,
+.life-skill-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
 }
 
-/* Container for a skill category. */
-.skill-category {
-  border: 2px solid #000000;
-  padding: 2rem;
+.project-card {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: transform 0.3s;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-image {
+  height: 200px;
+  background: #111;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.project-content {
+  padding: 1.5rem;
+}
+
+.project-content h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-heading);
+}
+
+.project-content p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.life-card .project-image {
+  height: 250px;
+  /* Slightly taller for presentation images */
+}
+
+/* --- Certificates --- */
+.certificate-card .certificate-image {
+  height: 220px;
+  background-color: #1a2238;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   transition: all 0.3s ease;
-  background: #000000;
 }
 
-/* Hover effect for skill category. */
-.skill-category:hover {
-  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
-  transform: translate(-5px, -5px);
-  border-color: #a3a3a3;
+.certificate-card:hover .certificate-image {
+  transform: scale(1.05);
 }
 
-/* Title of skill category. */
-.category-title {
-  font-size: 1.5rem;
-  font-weight: 700;
+/* --- Skills Grid & Cards --- */
+.skills-category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
   margin-bottom: 2rem;
-  font-family: "Playfair Display", serif;
 }
 
-/* List of skills. */
+.skill-category {
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  transition: transform 0.3s;
+}
+
+.skill-category:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border-color: rgba(249, 115, 22, 0.3);
+  /* Subtle Orange Glow */
+}
+
+.skill-category h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-main);
+  border-bottom: 2px solid var(--accent-orange);
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* --- Skills Progress Bars --- */
 .skill-list {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.25rem;
 }
 
-/* Individual skill item. */
 .skill-item {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
-/* Name of the skill. */
-.skill-name {
-  font-weight: 600;
+.skill-info {
+  display: flex;
+  justify-content: space-between;
   font-size: 0.9rem;
+  color: var(--text-muted);
+  font-weight: 500;
 }
 
-/* Background bar for skill progress. */
-.skill-bar {
+.progress-bar {
   width: 100%;
-  height: 8px;
-  background: #090909;
-  border: 1px solid #000000;
-}
-
-/* Filled part of skill progress bar. */
-.skill-progress {
-  height: 100%;
-  background: #000000;
-  transition: width 1s ease;
-}
-
-/* ========== Projects Section ========== */
-/* Background for Projects section. */
-.projects {
-  background: linear-gradient(135deg, #000000 0%, #3d3d3d 100%);
-}
-
-/* Grid layout for project cards. */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 2rem;
-}
-
-/* Individual project card. */
-.project-card {
-  border: 2px solid #000000;
-  background: #ffffff;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
   overflow: hidden;
-  transition: all 0.3s ease;
 }
 
-/* Hover effect for project card. */
-.project-card:hover {
-  box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.6);
-  transform: translate(-7px, -7px);
-  border-color: #a3a3a3;
+.progress {
+  height: 100%;
+  background: var(--gradient-halo);
+  border-radius: 3px;
+  transition: width 1s ease-in-out;
 }
 
-/* Container for project image. */
-.project-image {
-  width: 100%;
-  aspect-ratio: 16/9;
-  background: linear-gradient(135deg, #000000 0%, #969696 100%);
-  position: relative;
-}
-
-/* Overlay that appears on hover. */
-.project-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  /* Semi-transparent black background. */
-  background: rgba(0, 0, 0, 0.9);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* Hidden by default. */
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-/* Show overlay on hover. */
-.project-card:hover .project-overlay {
-  opacity: 1;
-}
-
-/* Link button inside overlay. */
-.project-link {
-  padding: 1rem 2rem;
-  border: 2px solid #ffffff;
+.btn-link {
   color: #ffffff;
+  /* Links in White */
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: all 0.3s ease;
-}
-
-/* Hover effect for project link. */
-.project-link:hover {
-  background: #404040;
-  color: #ffffff;
-  border-color: #a3a3a3;
-}
-
-/* Content area of project card. */
-.project-content {
-  padding: 2rem;
-}
-
-/* Title of project. */
-.project-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  font-family: "Playfair Display", serif;
-}
-
-/* Description text of project. */
-.project-description {
-  color: #404040;
-  margin-bottom: 1rem;
-  line-height: 1.6;
-}
-
-/* Container for tech tags. */
-.project-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-/* Individual tech tag. */
-.tag {
-  padding: 0.25rem 0.75rem;
-  background: #000000;
-  border: 1px solid #000000;
-  font-size: 0.85rem;
-  font-weight: 500;
-  transition: all 0.3s ease;
-}
-
-/* Hover effect for tag. */
-.tag:hover {
-  background: #404040;
-  color: #fff5f5;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-/* ========== Contact Section ========== */
-/* Grid layout for contact section. */
-.contact-content {
-  display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: 4rem;
-}
-
-/* Heading in contact section. */
-.contact-heading {
-  font-size: clamp(1.8rem, 3vw, 2.5rem);
-  font-weight: 700;
-  margin-bottom: 2rem;
-  font-family: "Playfair Display", serif;
-}
-
-/* Description text in contact section. */
-.contact-text {
-  color: #404040;
-  margin-bottom: 2rem;
-  line-height: 1.8;
-}
-
-/* Container for contact info items. */
-.contact-details {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-
-/* Individual contact info item (email, phone). */
-.contact-item {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 1rem;
-  border: 2px solid #ffffff;
-  transition: all 0.3s ease;
-  /* Transparent background. */
-  background: transparent;
-  color: #ffffff;
-}
-
-/* Hover effect for contact item. */
-.contact-item:hover {
-  background: #404040;
-  color: #000000;
-  transform: translateX(5px);
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
-}
-
-/* Icon in contact item. */
-.contact-icon {
-  width: 24px;
-  height: 24px;
-  /* Invert color to white for dark theme if icons are black. */
-  /* If icons are colored, you might not want this filter. */
-  /* Assuming icons are black PNGs and need to be white on dark background. */
-  filter: invert(1);
-}
-
-/* Container for social media links. */
-.social-links {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-/* Individual social link button. */
-.social-link {
-  width: 50px;
-  height: 50px;
-  border: 2px solid #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  background: transparent;
-  color: #ffffff;
-}
-
-/* Image icon inside social link. */
-.social-link img {
-  width: 24px;
-  height: 24px;
-  /* Invert color to white assuming black icons. */
-  filter: invert(1);
-  transition: all 0.3s ease;
-}
-
-/* Hover effect for social link. */
-.social-link:hover {
-  background: #404040;
-  color: #ffffff;
-  transform: translateY(-3px) rotate(5deg);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-}
-
-/* Form container. */
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-/* Wrapper for form input. */
-.form-group {
-  position: relative;
-}
-
-/* Input field styling. */
-.form-input {
-  width: 100%;
-  padding: 1rem;
-  border: 2px solid #000000;
-  background: #ffffff;
-  font-family: "Inter", sans-serif;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-}
-
-/* Focus state for input field. */
-.form-input:focus {
-  outline: none;
-  box-shadow: 5px 5px 0 #000000;
-  transform: translate(-2px, -2px);
-}
-
-/* Floating label styling. */
-.form-label {
-  position: absolute;
-  left: 1rem;
-  top: 1rem;
-  color: #a3a3a3;
-  pointer-events: none;
-  transition: all 0.3s ease;
-  background: #ffffff;
-  padding: 0 0.25rem;
-}
-
-/* Moves label up when input is focused or has text. */
-.form-input:focus+.form-label,
-.form-input:not(:placeholder-shown)+.form-label {
-  top: -10px;
-  font-size: 0.85rem;
-  color: #000000;
-  font-weight: 600;
-}
-
-/* Specific styling for textarea. */
-textarea.form-input {
-  resize: vertical;
-  min-height: 150px;
-}
-
-/* ========== Footer ========== */
-/* Footer section styling. */
-.footer {
-  padding: 4rem 0;
-  text-align: center;
-  /* Dark gradient background. */
-  background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
-  /* Transparent text color (likely intended to be white or similar). */
-  /* Note: #00000000 is fully transparent black. */
-  color: #00000000;
-}
-
-/* Footer main text. */
-.footer-text {
-  font-weight: 500;
-  margin-bottom: 0.5rem;
-}
-
-/* Footer subtext (copyright etc). */
-.footer-subtext {
-  color: #a3a3a3;
   font-size: 0.9rem;
 }
 
-/* ========== Responsive ========== */
-/* Media query for tablets and smaller screens (max-width: 968px). */
-@media (max-width: 968px) {
+/* --- Contact & Footer --- */
+.contact-container {
+  text-align: center;
+  max-width: 600px;
+}
 
-  /* Stacks hero content vertically. */
-  .hero-content {
-    grid-template-columns: 1fr;
+.contact-text {
+  margin-bottom: 2rem;
+  color: var(--text-muted);
+}
+
+.footer {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.2);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+/* --- Responsive --- */
+/* --- Responsive --- */
+@media (max-width: 900px) {
+
+  /* Reset Sidebar to Top Bar */
+  .navbar {
+    width: 100%;
+    height: var(--nav-height);
+    bottom: auto;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0 2rem;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  /* Reset Body Padding */
+  body {
+    padding-left: 0;
+  }
+
+  .nav-links {
+    display: none;
+    /* Hide desktop links */
+  }
+
+  .mobile-toggle {
+    display: flex;
+    /* Show hamburger */
+  }
+
+  /* Hero Mobile Reset */
+  .hero {
+    min-height: auto;
+    padding: 8rem 0 4rem;
     text-align: center;
   }
 
-  /* Moves image above text in hero. */
-  .hero-image {
-    order: -1;
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
   }
 
-  /* Reduces circle size. */
-  .profile-circle {
-    width: 300px;
-    height: 300px;
+  .hero-text {
+    align-items: center;
+    text-align: center;
+    order: 2;
   }
 
-  /* Centers CTA buttons. */
-  .hero-cta {
-    justify-content: center;
+  .hero-visual {
+    order: 1;
   }
 
-  /* Stacks about and contact content vertically. */
-  .about-content,
-  .contact-content {
+  .hexagon-frame {
+    width: 280px;
+    height: 310px;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .role-title {
+    font-size: 1.4rem;
+  }
+
+  /* Adjust About/Grid spacing */
+  .about-grid,
+  .skills-category-grid {
     grid-template-columns: 1fr;
   }
 
-  /* Stacks stats vertically. */
-  .stats {
+  .portfolio-grid {
     grid-template-columns: 1fr;
-  }
-
-  /* Stacks projects vertically. */
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Media query for mobile devices (max-width: 768px). */
-@media (max-width: 768px) {
-
-  /* Styles for mobile navigation menu. */
-  .nav-menu {
-    position: fixed;
-    left: -100%;
-    top: 80px;
-    flex-direction: column;
-    background: #ffffff;
-    width: 100%;
-    border-bottom: 2px solid #000000;
-    padding: 2rem;
-    transition: left 0.3s ease;
-  }
-
-  /* Shows menu when active class is added. */
-  .nav-menu.active {
-    left: 0;
-  }
-
-  /* Shows hamburger icon. */
-  .hamburger {
-    display: flex;
-  }
-
-  /* Aligns section headers to start. */
-  .section-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-}
-
-/* Media query for very small screens (max-width: 480px). */
-@media (max-width: 480px) {
-
-  /* Further reduces circle size. */
-  .profile-circle {
-    width: 250px;
-    height: 250px;
-  }
-
-  /* Stacks CTA buttons vertically. */
-  .hero-cta {
-    flex-direction: column;
-  }
-
-  /* Makes buttons full width. */
-  .btn {
-    width: 100%;
   }
 }

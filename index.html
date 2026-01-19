@@ -1,45 +1,58 @@
-<!-- Declares the document type as HTML5 -->
 <!DOCTYPE html>
-<!-- Sets the language of the document to English -->
 <html lang="en">
 
 <head>
-  <!-- Sets the character encoding to UTF-8 for universal character support -->
-  <meta charset="UTF-8" />
-  <!-- Configures the viewport for responsive design on mobile devices -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Sets the title of the page shown in the browser tab -->
-  <title>Sabari Krishnan R - Creative Developer</title>
-  <!-- Provides a description of the page for search engines (SEO) -->
-  <meta name="description"
-    content="Sabari Krishnan R, a creative developer specializing in web design and development." />
-  <!-- Preconnects to Google Fonts servers to improve loading performance -->
-  <!-- Links to the external CSS stylesheet for styling the page -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sabari | Creative Developer</title>
 
-  <!-- Links to the external CSS stylesheet for styling the page -->
-  <link rel="stylesheet" href="style.css" />
+  <!-- Modern Sans-Serif Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-  <!-- Navigation Section -->
-  <!-- The 'nav' element defines a set of navigation links -->
+<body class="loading">
+  <!-- Boot Sequence Loader -->
+  <div id="boot-loader">
+    <div class="boot-container">
+      <div class="boot-terminal">
+        <div class="terminal-header">
+          <div class="dot red"></div>
+          <div class="dot amber"></div>
+          <div class="dot green"></div>
+        </div>
+        <div id="boot-text"></div>
+      </div>
+      <div class="boot-progress">
+        <div class="progress-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Global Mouse Halo -->
+  <div id="cursor-halo"></div>
+
+  <!-- Navigation -->
   <nav class="navbar">
-    <!-- Container to center and constrain the width of navigation content -->
-    <div class="nav-container">
-      <!-- Logo link pointing to the top of the page (#home) -->
-      <a href="#home" class="logo">SKR</a>
-      <!-- Unordered list for navigation menu items -->
-      <ul class="nav-menu">
-        <!-- List items containing links to different sections of the page -->
-        <li><a href="#home" class="nav-link">Home</a></li>
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#skills" class="nav-link">Skills</a></li>
-        <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
+    <div class="container nav-content">
+      <a href="#home" class="logo">Sabari<span class="accent">.</span></a>
+
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#blogs">Blogs</a></li>
+        <li><a href="#certificates">Certifications</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
-      <!-- Hamburger menu icon for mobile devices -->
-      <div class="hamburger">
-        <!-- Spans represent the three lines of the hamburger icon -->
+
+      <div class="mobile-toggle">
         <span></span>
         <span></span>
         <span></span>
@@ -47,328 +60,510 @@
     </div>
   </nav>
 
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu">
+    <a href="#home" class="mobile-link">Home</a>
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#skills" class="mobile-link">Skills</a>
+    <a href="#projects" class="mobile-link">Projects</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+  </div>
+
   <!-- Hero Section -->
-  <!-- The 'section' element defines a thematic grouping of content -->
-  <!-- 'id="home"' allows navigation links to scroll to this section -->
   <section id="home" class="hero">
-    <div class="hero-content">
+    <div class="container hero-grid">
       <div class="hero-text">
-        <!-- Main heading of the page -->
-        <h1 class="hero-title">
-          <!-- 'span' elements allow styling parts of the text differently -->
-          <span class="line">Hello, I'm</span>
-          <span class="line accent">Sabari Krishnan R</span>
-        </h1>
-        <!-- Container for Call-to-Action (CTA) buttons -->
-        <div class="hero-cta">
+        <span class="greeting">Hello, I'm</span>
+        <h1 class="hero-title">Sabari Krishnan</h1>
+        <h2 class="role-title"><span id="typing-text">Web Developer Student</span><span class="cursor">|</span></h2>
+        <p class="hero-description">
+          I build accessible, pixel-perfect, and performant web experiences.
+          Passionate about clean code and user-centric design.
+        </p>
+        <div class="hero-buttons">
           <a href="#projects" class="btn btn-primary">View My Work</a>
-          <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+          <a href="#contact" class="btn btn-outline">Contact Me</a>
         </div>
       </div>
-      <!-- Container for the hero image/graphic -->
-      <div class="hero-image">
-        <!-- Decorative animated circle element -->
-        <div class="profile-circle">
-          <div class="circle-outer"></div>
-          <div class="circle-middle"></div>
-          <div class="circle-inner"></div>
+
+      <div class="hero-visual">
+        <div class="glow-orb orb-1"></div>
+        <div class="photo-editorial-frame">
+          <img src="./assets/DSC00752.jpg" alt="Sabari Krishnan" class="profile-photo-editorial">
+          <div class="frame-accent"></div>
         </div>
       </div>
     </div>
-    <!-- Scroll indicator arrow pointing down -->
-    <a href="#about" class="scroll-indicator">
-      <span></span>
-    </a>
   </section>
 
   <!-- About Section -->
-  <section id="about" class="about">
+  <section id="about" class="section about">
     <div class="container">
-      <!-- Header for the section containing number and title -->
       <div class="section-header">
-        <span class="section-number">01</span>
         <h2 class="section-title">About Me</h2>
       </div>
-      <div class="about-content">
-        <div class="about-text">
-          <!-- Lead paragraph with larger text size -->
-          <p class="lead">
-            I am Sabari Krishnan R, a passionate developer with strong focus on building practical, scalable software solutions. I come from non-tech background and transitioned into software development.
+
+      <div class="about-grid">
+        <!-- Bio (Centered) -->
+        <div class="about-bio">
+          <p>
+            I come from a unique, non-technical background. After completing my Plus Two in Livestock Entrepreneurship,
+            I spent time working in a bull farm an experience that taught me resilience and the value of hard work.
           </p>
           <p>
-            I learned by building, breaking and fixing projects. Over the years, I have honed my skills in various programming languages and frameworks, allowing me to tackle diverse challenges in web development. My goal is to solve real problems and create meaningful impact through code.
+            Today, I am pivoting that dedication into the world of technology as an Aspiring Web Developer Student
+            Intern.
+            I am building expertise in Python, Ruby, and Cyber Security, eager to bring my unique perspective
+            to building secure and efficient digital solutions.
           </p>
-          <!-- Statistics grid showing key achievements -->
-          <div class="stats">
-            <div class="stat-item">
-              <span class="stat-number">2</span>
-              <span class="stat-label">Projects Completed</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-number">1</span>
-              <span class="stat-label">Years Experience</span>
-            </div>
+
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Pivot Timeline -->
+  <section id="pivot" class="section pivot">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">The Pivot</h2>
+        <p class="section-description">My journey from the field to the terminal.</p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-line"></div>
+
+        <!-- Step 1 -->
+        <div class="timeline-item hidden">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">Phase 1</span>
+            <h3>The Bull Farm</h3>
+            <p>Mastered resilience and the value of hard work in a non-technical, high-stakes environment. This is where
+              my grit was built.</p>
+            <span class="timeline-tag">Resilience & Hard Work</span>
           </div>
         </div>
-        <!-- Container for the about image (currently a placeholder frame) -->
-        <div class="about-image">
-          <div class="image-frame">
-            <img src="./assets/DSC00752.jpg" alt="Sabari Krishnan R" class="profile-photo" />
-            <div class="frame-decoration"></div>
+
+        <!-- Step 2 -->
+        <div class="timeline-item hidden">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">Phase 2</span>
+            <h3>The First Script</h3>
+            <p>Discovered the power of automation and logic. A single spark of curiosity that turned a field-oriented
+              mind toward the digital world.</p>
+            <span class="timeline-tag">The Curiosity</span>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="timeline-item hidden">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">Phase 3</span>
+            <h3>The Execution</h3>
+            <p>Building real-world solutions like SalientGuard and MedSupply. Applying hacker-level focus to solve
+              complex problems.</p>
+            <span class="timeline-tag">Security & Development</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Skills Section -->
-  <section id="skills" class="skills">
+  <!-- Skills Section (New 8 Cards) -->
+  <section id="skills" class="section skills">
     <div class="container">
       <div class="section-header">
-        <span class="section-number">02</span>
-        <h2 class="section-title">Skills & Expertise</h2>
+        <h2 class="section-title">Skills & Technologies</h2>
       </div>
-      <!-- Grid layout for skill categories -->
-      <div class="skills-grid">
-        <!-- Category: Frontend -->
+
+      <div class="skills-category-grid">
+        <!-- 1. Languages -->
         <div class="skill-category">
-          <h3 class="category-title">Frontend</h3>
+          <h3>Languages</h3>
           <div class="skill-list">
-            <!-- Individual skill item with progress bar -->
             <div class="skill-item">
-              <span class="skill-name">HTML/CSS</span>
-              <div class="skill-bar">
-                <!-- Inline style sets the width of the progress bar -->
-                <div class="skill-progress" style="width: 95%"></div>
+              <div class="skill-info"><span>Ruby</span><span>70%</span></div>
+              <div class="progress-bar">
+                <div class="progress" style="width: 70%"></div>
               </div>
             </div>
             <div class="skill-item">
-              <span class="skill-name">JavaScript</span>
-              <div class="skill-bar">
-                <div class="skill-progress" style="width: 90%"></div>
+              <div class="skill-info"><span>Python</span><span>50%</span></div>
+              <div class="progress-bar">
+                <div class="progress" style="width: 50%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>HTML/CSS</span><span>50%</span></div>
+              <div class="progress-bar">
+                <div class="progress" style="width: 50%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>JavaScript</span><span>20%</span></div>
+              <div class="progress-bar">
+                <div class="progress" style="width: 20%"></div>
               </div>
             </div>
           </div>
         </div>
-        <!-- Category: Backend -->
+
+        <!-- 2. Backend & DB -->
         <div class="skill-category">
-          <h3 class="category-title">Backend</h3>
+          <h3>Backend & DB</h3>
           <div class="skill-list">
             <div class="skill-item">
-              <span class="skill-name">Ruby</span>
-              <div class="skill-bar">
-                <div class="skill-progress" style="width: 88%"></div>
+              <div class="skill-info"><span>FastAPI</span><span>60%</span></div>
+              <div class="progress-bar">
+                <div class="progress" style="width: 60%"></div>
               </div>
             </div>
             <div class="skill-item">
-              <span class="skill-name">Python</span>
-              <div class="skill-bar">
-                <div class="skill-progress" style="width: 82%"></div>
+              <div class="skill-info"><span>Ruby on Rails</span><span>50%</span></div>
+              <div class="progress-bar">
+                <div class="progress" style="width: 50%"></div>
               </div>
             </div>
             <div class="skill-item">
-              <span class="skill-name">PostgreSQL</span>
-              <div class="skill-bar">
-                <div class="skill-progress" style="width: 75%"></div>
+              <div class="skill-info"><span>PostgreSQL</span><span>50%</span></div>
+              <div class="progress-bar">
+                <div class="progress" style="width: 50%"></div>
               </div>
             </div>
           </div>
         </div>
-        <!-- Category: Design -->
+
+        <!-- 3. Security -->
         <div class="skill-category">
-          <h3 class="category-title">Design</h3>
-            <div class="skill-list">
+          <h3>Security</h3>
+          <div class="skill-list">
             <div class="skill-item">
-              <span class="skill-name">Figma</span>
-              <div class="skill-bar">
-                <div class="skill-progress" style="width: 90%"></div>
+              <div class="skill-info"><span>Ethical Hacking</span><span>80%</span></div>
+              <div class="progress-bar">
+                <div class="progress" style="width: 80%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>Kali Linux</span><span>60%</span></div>
+              <div class="progress-bar">
+                <div class="progress" style="width: 60%"></div>
               </div>
             </div>
           </div>
         </div>
-        <!-- Category: Tools & Others -->
+
+        <!-- 4. Life Skills -->
         <div class="skill-category">
-          <h3 class="category-title">Tools & Others</h3>
+          <h3>Life Skills</h3>
           <div class="skill-list">
             <div class="skill-item">
-              <span class="skill-name">Git/GitHub</span>
-              <div class="skill-bar">
-                <div class="skill-progress" style="width: 93%"></div>
+              <div class="skill-info"><span>Problem Solving</span><span>85%</span></div>
+              <div class="progress-bar">
+                <div class="progress" style="width: 85%"></div>
               </div>
             </div>
             <div class="skill-item">
-              <span class="skill-name">linux</span>
-              <div class="skill-bar">
-                <div class="skill-progress" style="width: 75%"></div>
+              <div class="skill-info"><span>Adaptive Learning</span><span>90%</span></div>
+              <div class="progress-bar">
+                <div class="progress" style="width: 90%"></div>
               </div>
             </div>
             <div class="skill-item">
-              <span class="skill-name">cyber security</span>
-              <div class="skill-bar">
-                <div class="skill-progress" style="width: 70%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">Ethical hacking</span>
-              <div class="skill-bar">
-                <div class="skill-progress" style="width: 88%"></div>
+              <div class="skill-info"><span>Team Collaboration</span><span>80%</span></div>
+              <div class="progress-bar">
+                <div class="progress" style="width: 80%"></div>
               </div>
             </div>
           </div>
+        </div>
+
+        <!-- 5. Soft Skills -->
+        <div class="skill-category">
+          <h3>Soft Skills</h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-info"><span>Leadership</span><span>85%</span></div>
+              <div class="progress-bar">
+                <div class="progress" style="width: 85%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>Communication</span><span>90%</span></div>
+              <div class="progress-bar">
+                <div class="progress" style="width: 90%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>Mentorship</span><span>80%</span></div>
+              <div class="progress-bar">
+                <div class="progress" style="width: 80%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+  <!-- English Skills Section -->
+  <section id="english-skills" class="section language-skills">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">English Skills</h2>
+      </div>
+
+      <div class="language-grid">
+        <!-- Listening -->
+        <div class="lang-card hidden">
+          <div class="lang-icon">
+            <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="2" fill="none"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
+              <path
+                d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z">
+              </path>
+            </svg>
+          </div>
+          <h3>Listening</h3>
+          <span class="lang-badge">B2</span>
+        </div>
+
+        <!-- Speaking -->
+        <div class="lang-card hidden">
+          <div class="lang-icon">
+            <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="2" fill="none"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+              <path d="M8 9h8"></path>
+              <path d="M8 13h6"></path>
+            </svg>
+          </div>
+          <h3>Speaking</h3>
+          <span class="lang-badge">B2</span>
+        </div>
+
+        <!-- Reading -->
+        <div class="lang-card hidden">
+          <div class="lang-icon">
+            <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="2" fill="none"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+            </svg>
+          </div>
+          <h3>Reading</h3>
+          <span class="lang-badge">B2</span>
+        </div>
+
+        <!-- Writing -->
+        <div class="lang-card hidden">
+          <div class="lang-icon">
+            <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="2" fill="none"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+              <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+              <path d="M2 2l7.5 1.5"></path>
+              <path d="M7 11c.17.17.34.34.5.5"></path>
+            </svg>
+          </div>
+          <h3>Writing</h3>
+          <span class="lang-badge">B2</span>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Projects Section -->
-  <section id="projects" class="projects">
+  <section id="projects" class="section projects">
     <div class="container">
       <div class="section-header">
-        <span class="section-number">03</span>
         <h2 class="section-title">Featured Projects</h2>
       </div>
-      <!-- Grid layout for project cards -->
-      <div class="projects-grid">
-        <!-- Project Card 1 -->
-        <div class="project-card">
-          <div class="project-image">
-            <!-- Overlay that appears on hover -->
-            <div class="project-overlay">
-              <a href="https://maady321.github.io/project_1_static_webpage/" class="project-link">View Project</a>
-            </div>
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">Medsuppply</h3>
-            <p class="project-description">
-              A static website  solution with integration,
-              inventory management for medical supply 
-            </p>
-            <!-- Tags describing the tech stack used -->
-            <div class="project-tags">
-              <span class="tag">HTML</span>
-              <span class="tag">CSS</span>
-             
-            </div>
-          </div>
-        </div>
-        <!-- Project Card 2 -->
-        <div class="project-card">
-          <div class="project-image">
-            <div class="project-overlay">
-              <a href="#" class="project-link">View Project</a>
-            </div>
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">Marutha Support</h3>
-            <p class="project-description">
-              A better platform for connect palliative care patients to doctors and volunteers.
-            </p>
-            <div class="project-tags">
-              <span class="tag">HTML</span>
-              <span class="tag">CSS</span>
-              <span class="tag">JavaScript</span>
-              <span class="tag">FastAPI</span>
-            </div>
-          </div>
-        </div>
-        </div>
-        </div>
-      </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="contact">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-number">04</span>
-        <h2 class="section-title">Get In Touch</h2>
-      </div>
-      <div class="contact-content">
-        <!-- Contact information column -->
-        <div class="contact-info">
-          <h3 class="contact-heading">Let's work together</h3>
-          <p class="contact-text">
-            I'm always interested in hearing about new projects and
-            opportunities. Whether you have a question or just want to say hi,
-            feel free to reach out!
-          </p>
-          <div class="contact-details">
-            <!-- Email contact item -->
-            <a href="mailto:sabarikrishnan994@gmail.com" class="contact-item">
-              <!-- Image icon for email -->
-              <img src="./assets/mail.png" alt="Email" class="contact-icon" />
-              <span>sabarikrishnan994@gmail.com</span>
-            </a>
-            <!-- Phone contact item -->
-            <a href="tel:8075466940" class="contact-item">
-              <!-- Image icon for phone -->
-              <img src="assets/phone.png" alt="Phone" class="contact-icon" />
-              <span>8075466940</span>
-            </a>
-            <!-- Location contact item -->
-            <a href="#" class="contact-item">
-              <!-- Image icon for location -->
-              <img src="./assets/location-pin-icon-vector-map-symbol-illustration_1297251-24694.avif" alt="Location"
-                class="contact-icon" />
-              <span>Kerala, India</span>
-            </a>
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <article class="project-card">
+          <div class="project-image" style="background-image: url('./assets/medsupply.png');"></div>
+          <div class="project-content">
+            <h3>Medsupply</h3>
+            <p>Inventory management for medical supplies.</p>
+            <div class="tags">
+              <span>HTML</span>
+              <span>CSS</span>
+            </div>
+            <a href="https://maady321.github.io/project_1_static_webpage/" class="btn-link">View Project &rarr;</a>
           </div>
-          <!-- Social media links with Image icons -->
-          <div class="social-links">
-            <a href="#" class="social-link" aria-label="GitHub">
-              <img src="./assets/github.png" alt="GitHub" />
-            </a>
-            <a href="#" class="social-link" aria-label="LinkedIn">
-              <img src="./assets/linkedin.png" alt="LinkedIn" />
-            </a>
-            <a href="#" class="social-link" aria-label="Twitter">
-              <img src="./assets/twitter.png" alt="Twitter" />
-            </a>
-            <a href="#" class="social-link" aria-label="Reddit">
-              <img src="./assets/reddit.png" alt="Reddit" />
-            </a>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card">
+          <div class="project-image"></div>
+          <div class="project-content">
+            <h3>Marutha Support</h3>
+            <p>Platform connecting palliative care patients.</p>
+            <div class="tags">
+              <span>FastAPI</span>
+              <span>HTML/CSS JS</span>
+            </div>
+            <a href="#" class="btn-link">View Project &rarr;</a>
           </div>
-        </div>
-        <!-- Contact Form -->
-        <form class="contact-form">
-          <div class="form-group">
-            <!-- Input field for name -->
-            <input type="text" id="name" class="form-input" placeholder=" " required />
-            <!-- Label that floats when input is focused -->
-            <label for="name" class="form-label">Your Name</label>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card">
+          <div class="project-image" style="background-image: url('./assets/salientguard.jpg');"></div>
+          <div class="project-content">
+            <h3>SalientGuard</h3>
+            <p>A hardware for protecting you from attacks through wifi.</p>
+            <div class="tags">
+              <span>C++</span>
+              <span>ESP32</span>
+            </div>
+            <a href="#" class="btn-link">View Project &rarr;</a>
           </div>
-          <div class="form-group">
-            <input type="email" id="email" class="form-input" placeholder=" " required />
-            <label for="email" class="form-label">Your Email</label>
-          </div>
-          <div class="form-group">
-            <input type="text" id="subject" class="form-input" placeholder=" " required />
-            <label for="subject" class="form-label">Subject</label>
-          </div>
-          <div class="form-group">
-            <!-- Textarea for longer messages -->
-            <textarea id="message" class="form-input" rows="5" placeholder=" " required></textarea>
-            <label for="message" class="form-label">Message</label>
-          </div>
-          <!-- Submit button -->
-          <button type="submit" class="btn btn-primary btn-full">
-            Send Message
-          </button>
-        </form>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- Footer Section -->
+  <!-- Life Skills Projects Section -->
+  <section class="section" id="life-skills-projects">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Life Skills - Projects</h2>
+      </div>
+      <div class="life-skill-grid">
+        <!-- Project 1 -->
+        <article class="project-card life-card">
+          <div class="project-image" style="background-image: url('./assets/up.jpg');"></div>
+          <div class="project-content">
+            <h3>First Project Presentation</h3>
+            <p>Overcame stage fear with team support and delivered a confident presentation.</p>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card life-card">
+          <div class="project-image" style="background-image: url('./assets/pbc.jpeg');"></div>
+          <div class="project-content">
+            <h3>Product Building Challenge</h3>
+            <p>Learned persistence by re-presenting ideas after initial rejection.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blogs Section -->
+  <section id="blogs" class="section blogs">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Recent Writings</h2>
+      </div>
+      <div class="projects-grid">
+        <!-- Blog 1 -->
+        <article class="project-card blog-card">
+          <div class="project-content">
+            <h3></h3>
+            <p></p>
+            <a href="blog-1.html" class="btn-link">Read Article &rarr;</a>
+          </div>
+        </article>
+        <!-- Blog 2 -->
+        <article class="project-card blog-card">
+          <div class="project-content">
+            <h3> </h3>
+            <p> </p>
+            <a href="blog-2.html" class="btn-link">Read Article &rarr;</a>
+          </div>
+        </article>
+        <!-- Blog 3 -->
+        <article class="project-card blog-card">
+          <div class="project-content">
+            <h3>QR-Code Phishing: Ethical Lessons</h3>
+            <p>Understanding the Threat Responsible</p>
+            <a href="blog-3.html" class="btn-link">Read Article &rarr;</a>
+          </div>
+        </article>
+        <!-- Blog 4 -->
+        <article class="project-card blog-card">
+          <div class="project-content">
+            <h3></h3>
+            <p></p>
+            <a href="blog-4.html" class="btn-link">Read Article &rarr;</a>
+          </div>
+        </article>
+        <!-- Blog 5 -->
+        <article class="project-card blog-card">
+          <div class="project-content">
+            <h3></h3>
+            <p></p>
+            <a href="blog-5.html" class="btn-link">Read Article &rarr;</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certificates Section -->
+  <section id="certificates" class="section certificates">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Certifications</h2>
+      </div>
+      <div class="projects-grid">
+        <!-- Certificate 1 -->
+        <article class="project-card certificate-card">
+          <div class="certificate-image" style="background-image: url('./assets/certificate-hacking.png');"></div>
+          <div class="project-content">
+            <h3>Ethical Hacking & Cybersecurity</h3>
+            <p>2-Hour Workshop by VaultofCodes - 26/12/2025</p>
+          </div>
+        </article>
+        <!-- Certificate 2 -->
+        <article class="project-card certificate-card">
+          <div class="certificate-image"></div>
+          <div class="project-content">
+            <h3></h3>
+            <p></p>
+          </div>
+        </article>
+        <!-- Certificate 3 -->
+        <article class="project-card certificate-card">
+          <div class="certificate-image"></div>
+          <div class="project-content">
+            <h3></h3>
+            <p></p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section contact">
+    <div class="container contact-container">
+      <h2 class="section-title">Get In Touch</h2>
+      <p class="contact-text">
+        I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll try my
+        best to get back to you!
+      </p>
+      <a href="mailto:sabarikrishnan994@gmail.com" class="btn btn-primary">Say Hello</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <!-- Copyright notice -->
-      <p class="footer-text">&copy; 2026 Sabari Krishnan R. All rights reserved.</p>
-      <!-- Footer tagline -->
-      <p class="footer-subtext">Designed & Built with passion</p>
+      <p>&copy; 2026 Sabari Krishnan. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- Links to the external JavaScript file for interactivity -->
   <script src="script.js"></script>
 </body>
 

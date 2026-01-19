@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Server Components | Sabari Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            padding-left: 0;
+        }
+
+        .blog-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #ffffff;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .back-btn:hover {
+            transform: translateX(-5px);
+        }
+
+        .article-content {
+            background: var(--bg-card);
+            padding: 3rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .date {
+            color: #ffffff;
+            margin-bottom: 2rem;
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        h2 {
+            color: var(--text-main);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-family: var(--font-heading);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="blog-container">
+        <a href="index.html" class="back-btn">← Back to Home</a>
+        <article class="article-content">
+            <h1>React Server Components: The Future?</h1>
+            <span class="date">October 24, 2025</span>
+            <p>React Server Components (RSC) represent a paradigm shift in how we build React applications. By allowing
+                components to render exclusively on the server, we can reduce bundle sizes and improve initial page load
+                performance significantly.</p>
+            <h2>Why Use RSC?</h2>
+            <p>Traditionally, React components run on the client. This means all the JavaScript code for those
+                components needs to be downloaded, parsed, and executed by the user's browser. With RSC, text-heavy
+                components or those that rely on database calls can remain on the server.</p>
+            <p>This leads to a faster "Time to Interactive" and a better overall user experience, especially on slower
+                devices.</p>
+        </article>
+    </div>
+</body>
+
+</html>

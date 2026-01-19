@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mastering CSS Grid | Sabari Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            padding-left: 0;
+        }
+
+        .blog-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #ffffff;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .back-btn:hover {
+            transform: translateX(-5px);
+        }
+
+        .article-content {
+            background: var(--bg-card);
+            padding: 3rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .date {
+            color: #ffffff;
+            margin-bottom: 2rem;
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        h2 {
+            color: var(--text-main);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-family: var(--font-heading);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="blog-container">
+        <a href="index.html" class="back-btn">← Back to Home</a>
+        <article class="article-content">
+            <h1>Mastering CSS Grid Layout</h1>
+            <span class="date">November 12, 2025</span>
+            <p>CSS Grid Layout is the most powerful layout system available in CSS. It is a 2-dimensional system,
+                meaning it can handle both columns and rows, unlike Flexbox which is largely 1-dimensional.</p>
+            <h2>The Basics</h2>
+            <p>To define a grid container, you simply use <code>display: grid</code>. From there, you can define columns
+                using <code>grid-template-columns</code>. A common pattern for responsive design is
+                <code>repeat(auto-fit, minmax(200px, 1fr))</code>.</p>
+            <p>Grid makes creating complex magazine-style layouts incredibly simple, without the need for positioning
+                hacks or floats.</p>
+        </article>
+    </div>
+</body>
+
+</html>

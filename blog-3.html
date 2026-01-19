@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FastAPI for Beginners | Sabari Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            padding-left: 0;
+        }
+
+        .blog-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #ffffff;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .back-btn:hover {
+            transform: translateX(-5px);
+        }
+
+        .article-content {
+            background: var(--bg-card);
+            padding: 3rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .date {
+            color: #ffffff;
+            margin-bottom: 2rem;
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        h2 {
+            color: var(--text-main);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-family: var(--font-heading);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="blog-container">
+        <a href="index.html" class="back-btn">← Back to Home</a>
+        <article class="article-content">
+            <h1>What I Learned Studying QR-Code Phishing — And Why I’m Doing It Ethically</h1>
+            <span class="date">January 12, 2026</span>
+            <p>I spent time learning how QR-code phishing works and how attackers exploit QR codes to trick people. Let
+                me be blunt: this is dangerous knowledge in the wrong hands. I studied it deliberately and responsibly
+                to understand the threat so I could help defend users, report vulnerabilities responsibly, and build
+                safer systems. This post is a non-technical reflection — the “what,” “why,” and “what next” — not a
+                how-to for attackers.</p>
+
+            <h2>Why QR-code phishing matters</h2>
+            <p>QR codes are everywhere: menus, posters, product packaging, parking meters. They’re convenient and people
+                trust them. That trust is the problem. A malicious QR can silently send users to credential-harvesting
+                pages, trigger unintended actions, or link to malware. Because scanning is fast and usually happens on
+                mobile devices, victims often don’t inspect URLs carefully.</p>
+
+            <h2>What I set out to learn (high level)</h2>
+            <p>My goal wasn’t to weaponize the technique — it was to understand:</p>
+            <ul>
+                <li>How attackers abuse trust in QR codes to redirect users to phishing pages.</li>
+                <li>The user experience that makes these attacks effective (urgency, convenience, social proof).</li>
+                <li>How automated tools can be used in research and testing environments to simulate attacks for
+                    defensive testing.</li>
+                <li>Defensive indicators and mitigations defenders can apply.</li>
+            </ul>
+
+            <h2>Key conceptual takeaways</h2>
+            <ul>
+                <li><strong>Attack model, not magic:</strong> QR-phishing is social engineering + a redirect mechanism.
+                    It’s effective because it skips intermediate steps users would otherwise inspect.</li>
+                <li><strong>Signal vs noise:</strong> Phishing success depends on believable context: where the QR sits,
+                    what the surrounding messaging promises, and whether it leverages urgency or authority.</li>
+                <li><strong>Automation amplifies:</strong> Tools can automate delivery and scale testing, but the human
+                    psychological lever is still the critical factor.</li>
+                <li><strong>Mobile UX is the attack surface:</strong> Mobile browsers, app behaviors, and how operating
+                    systems present scanned links shape success rates.</li>
+                <li><strong>Defensive telemetry matters:</strong> Logs, URL reputation services, and endpoint
+                    protections are vital for detection and response.</li>
+            </ul>
+
+            <h2>Why I’m explicit about ethics</h2>
+            <p>Studying offensive techniques without ethics is irresponsible. I committed to testing only in controlled,
+                consented environments: my own lab systems, explicitly authorized test accounts, or in bug-bounty
+                programs with clear scopes. If you’re learning this material, do the same: never run tests against real
+                users, public services, or systems where you don’t have written permission. Learn to be the person who
+                fixes vulnerabilities, not the one who exploits them.</p>
+
+            <h2>How defenders should think about this threat</h2>
+            <ul>
+                <li><strong>User education is not optional:</strong> Teach people to preview URLs before entering
+                    credentials. Encourage skepticism for unexpected QR prompts.</li>
+                <li><strong>Use URL reputation and filtering:</strong> Gate unknown destinations with reputation checks
+                    and warn users on risky redirects.</li>
+                <li><strong>Application hardening:</strong> Apps and mobile browsers should present full, inspectable
+                    URLs and block known credential-harvesting pages.</li>
+                <li><strong>Monitor telemetry:</strong> Look for spikes in QR-linked landing page visits, unusual
+                    referrers, or sudden credential submission volumes.</li>
+            </ul>
+
+            <h2>Legal and ethical rules to follow</h2>
+            <ol>
+                <li>Only test on systems you own or have explicit written permission to test.</li>
+                <li>Follow disclosure policies — notify the impacted organization and give them a reasonable time to fix
+                    before public disclosure.</li>
+                <li>Use findings for defense, training, or authorized research.</li>
+            </ol>
+
+            <h2>What to do next</h2>
+            <p>Apply your knowledge to defense: help a small business audit their QR code usage, create employee
+                training, or build a checklist to vet third-party QR landing pages. Contribute to awareness: write
+                simple, non-technical guidance for friends/family about safe QR scanning.</p>
+
+            <p><strong>Final Reality Check:</strong> Knowing how QR-code phishing works gives you power — and the only
+                responsible path is to use that power to reduce harm. If you’re tempted to experiment on other people or
+                real systems, stop. You’re not clever or edgy — you’re breaking the law and risking real harm.</p>
+        </article>
+    </div>
+</body>
+
+</html>
