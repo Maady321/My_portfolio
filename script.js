@@ -5,6 +5,12 @@ const bootSequence = () => {
     const body = document.body;
     const progressFill = document.querySelector('.progress-fill');
 
+    if (!bootText || !bootLoader) {
+        if (body.classList.contains('loading')) body.classList.remove('loading');
+        return;
+    }
+
+
     const lines = [
         { text: 'Initializing SabariOS...', status: 'info', prefix: '[INFO]' },
         { text: 'Agriculture background detected.', status: 'ok', prefix: '[OK]' },
@@ -69,12 +75,50 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Mobile Menu Toggle
-const mobileToggle = document.querySelector('.mobile-toggle');
-const mobileMenu = document.querySelector('.mobile-menu');
+const mobileToggle = document.querySelector('.mobile-toggle-btn');
+const navbar = document.querySelector('.navbar');
+const mobileOverlay = document.querySelector('.mobile-overlay');
+const navLinks = document.querySelectorAll('.nav-links a');
+
+const toggleMenu = () => {
+    mobileToggle.classList.toggle('active');
+    navbar.classList.toggle('active');
+    mobileOverlay.classList.toggle('active');
+    document.body.style.overflow = navbar.classList.contains('active') ? 'hidden' : '';
+};
 
 if (mobileToggle) {
-    mobileToggle.addEventListener('click', () => {
-        mobileMenu.classList.toggle('active');
-        mobileToggle.classList.toggle('active'); // If you add active states to the hamburger
-    });
+    mobileToggle.addEventListener('click', toggleMenu);
+    mobileOverlay.addEventListener('click', toggleMenu);
 }
+
+// Close menu when clicking a link
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        if (navbar.classList.contains('active')) {
+            toggleMenu();
+        }
+    });
+});
+
+// Active Link Tracking on Scroll
+const sections = document.querySelectorAll('section[id]');
+
+window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= sectionTop - 100) {
+            current = section.getAttribute('id');
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        const href = link.getAttribute('href');
+        if (href && href.includes('#') && href.split('#')[1] === current) {
+            link.classList.add('active');
+        }
+    });
+});

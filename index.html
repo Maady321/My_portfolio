@@ -1,570 +1,747 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sabari | Creative Developer</title>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sabari | Creative Developer</title>
+    <!-- Modern Sans-Serif Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Modern Sans-Serif Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap"
-    rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-  <link rel="stylesheet" href="style.css">
-</head>
-
-<body class="loading">
-  <!-- Boot Sequence Loader -->
-  <div id="boot-loader">
-    <div class="boot-container">
-      <div class="boot-terminal">
-        <div class="terminal-header">
-          <div class="dot red"></div>
-          <div class="dot amber"></div>
-          <div class="dot green"></div>
+  <body class="loading">
+    <!-- Boot Sequence Loader -->
+    <div id="boot-loader">
+      <div class="boot-container">
+        <div class="boot-terminal">
+          <div class="terminal-header">
+            <div class="dot red"></div>
+            <div class="dot amber"></div>
+            <div class="dot green"></div>
+          </div>
+          <div id="boot-text"></div>
         </div>
-        <div id="boot-text"></div>
-      </div>
-      <div class="boot-progress">
-        <div class="progress-fill"></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Global Mouse Halo -->
-  <div id="cursor-halo"></div>
-
-  <!-- Navigation -->
-  <nav class="navbar">
-    <div class="container nav-content">
-      <a href="#home" class="logo">Sabari<span class="accent">.</span></a>
-
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#blogs">Blogs</a></li>
-        <li><a href="#certificates">Certifications</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-
-      <div class="mobile-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Mobile Menu Overlay -->
-  <div class="mobile-menu">
-    <a href="#home" class="mobile-link">Home</a>
-    <a href="#about" class="mobile-link">About</a>
-    <a href="#skills" class="mobile-link">Skills</a>
-    <a href="#projects" class="mobile-link">Projects</a>
-    <a href="#contact" class="mobile-link">Contact</a>
-  </div>
-
-  <!-- Hero Section -->
-  <section id="home" class="hero">
-    <div class="container hero-grid">
-      <div class="hero-text">
-        <span class="greeting">Hello, I'm</span>
-        <h1 class="hero-title">Sabari Krishnan</h1>
-        <h2 class="role-title"><span id="typing-text">Web Developer Student</span><span class="cursor">|</span></h2>
-        <p class="hero-description">
-          I build accessible, pixel-perfect, and performant web experiences.
-          Passionate about clean code and user-centric design.
-        </p>
-        <div class="hero-buttons">
-          <a href="#projects" class="btn btn-primary">View My Work</a>
-          <a href="#contact" class="btn btn-outline">Contact Me</a>
-        </div>
-      </div>
-
-      <div class="hero-visual">
-        <div class="glow-orb orb-1"></div>
-        <div class="photo-editorial-frame">
-          <img src="./assets/DSC00752.jpg" alt="Sabari Krishnan" class="profile-photo-editorial">
-          <div class="frame-accent"></div>
+        <div class="boot-progress">
+          <div class="progress-fill"></div>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- About Section -->
-  <section id="about" class="section about">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">About Me</h2>
-      </div>
+    <!-- Global Mouse Halo -->
+    <div id="cursor-halo"></div>
 
-      <div class="about-grid">
-        <!-- Bio (Centered) -->
-        <div class="about-bio">
-          <p>
-            I come from a unique, non-technical background. After completing my Plus Two in Livestock Entrepreneurship,
-            I spent time working in a bull farm an experience that taught me resilience and the value of hard work.
-          </p>
-          <p>
-            Today, I am pivoting that dedication into the world of technology as an Aspiring Web Developer Student
-            Intern.
-            I am building expertise in Python, Ruby, and Cyber Security, eager to bring my unique perspective
-            to building secure and efficient digital solutions.
-          </p>
-
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- The Pivot Timeline -->
-  <section id="pivot" class="section pivot">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">The Pivot</h2>
-        <p class="section-description">My journey from the field to the terminal.</p>
-      </div>
-
-      <div class="timeline">
-        <div class="timeline-line"></div>
-
-        <!-- Step 1 -->
-        <div class="timeline-item hidden">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <span class="timeline-date">Phase 1</span>
-            <h3>The Bull Farm</h3>
-            <p>Mastered resilience and the value of hard work in a non-technical, high-stakes environment. This is where
-              my grit was built.</p>
-            <span class="timeline-tag">Resilience & Hard Work</span>
+    <!-- Navigation Sidebar -->
+    <nav class="navbar">
+      <div class="nav-content">
+        <!-- Profile Section -->
+        <div class="nav-profile">
+          <div class="profile-avatar">
+            <img src="./assets/DSC00752.jpg" alt="Sabari Krishnan" />
+          </div>
+          <div class="profile-info">
+            <span class="profile-name">Sabari Krishnan</span>
+            <span class="profile-status">
+              <span class="status-dot"></span> Online
+            </span>
           </div>
         </div>
 
-        <!-- Step 2 -->
-        <div class="timeline-item hidden">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <span class="timeline-date">Phase 2</span>
-            <h3>The First Script</h3>
-            <p>Discovered the power of automation and logic. A single spark of curiosity that turned a field-oriented
-              mind toward the digital world.</p>
-            <span class="timeline-tag">The Curiosity</span>
-          </div>
-        </div>
+        <!-- Nav Links -->
+        <ul class="nav-links">
+          <li>
+            <a href="#home" class="active">
+              <svg viewBox="0 0 24 24" class="nav-icon">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+              </svg>
+              <span>Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="#about">
+              <svg viewBox="0 0 24 24" class="nav-icon">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              <span>About</span>
+            </a>
+          </li>
+          <li>
+            <a href="#skills">
+              <svg viewBox="0 0 24 24" class="nav-icon">
+                <path
+                  d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"
+                ></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              <span>Skills</span>
+            </a>
+          </li>
+          <li>
+            <a href="#projects">
+              <svg viewBox="0 0 24 24" class="nav-icon">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+              <span>Projects</span>
+            </a>
+          </li>
+          <li>
+            <a href="#blogs">
+              <svg viewBox="0 0 24 24" class="nav-icon">
+                <path
+                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                ></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <span>Blogs</span>
+            </a>
+          </li>
+          <li>
+            <a href="#certificates">
+              <svg viewBox="0 0 24 24" class="nav-icon">
+                <circle cx="12" cy="8" r="7"></circle>
+                <polyline
+                  points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"
+                ></polyline>
+              </svg>
+              <span>Certifications</span>
+            </a>
+          </li>
+          <li>
+            <a href="#contact">
+              <svg viewBox="0 0 24 24" class="nav-icon">
+                <path
+                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                ></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <span>Contact</span>
+            </a>
+          </li>
+        </ul>
 
-        <!-- Step 3 -->
-        <div class="timeline-item hidden">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <span class="timeline-date">Phase 3</span>
-            <h3>The Execution</h3>
-            <p>Building real-world solutions like SalientGuard and MedSupply. Applying hacker-level focus to solve
-              complex problems.</p>
-            <span class="timeline-tag">Security & Development</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Skills Section (New 8 Cards) -->
-  <section id="skills" class="section skills">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Skills & Technologies</h2>
-      </div>
-
-      <div class="skills-category-grid">
-        <!-- 1. Languages -->
-        <div class="skill-category">
-          <h3>Languages</h3>
-          <div class="skill-list">
-            <div class="skill-item">
-              <div class="skill-info"><span>Ruby</span><span>70%</span></div>
-              <div class="progress-bar">
-                <div class="progress" style="width: 70%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info"><span>Python</span><span>50%</span></div>
-              <div class="progress-bar">
-                <div class="progress" style="width: 50%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info"><span>HTML/CSS</span><span>50%</span></div>
-              <div class="progress-bar">
-                <div class="progress" style="width: 50%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info"><span>JavaScript</span><span>20%</span></div>
-              <div class="progress-bar">
-                <div class="progress" style="width: 20%"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 2. Backend & DB -->
-        <div class="skill-category">
-          <h3>Backend & DB</h3>
-          <div class="skill-list">
-            <div class="skill-item">
-              <div class="skill-info"><span>FastAPI</span><span>60%</span></div>
-              <div class="progress-bar">
-                <div class="progress" style="width: 60%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info"><span>Ruby on Rails</span><span>50%</span></div>
-              <div class="progress-bar">
-                <div class="progress" style="width: 50%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info"><span>PostgreSQL</span><span>50%</span></div>
-              <div class="progress-bar">
-                <div class="progress" style="width: 50%"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 3. Security -->
-        <div class="skill-category">
-          <h3>Security</h3>
-          <div class="skill-list">
-            <div class="skill-item">
-              <div class="skill-info"><span>Ethical Hacking</span><span>80%</span></div>
-              <div class="progress-bar">
-                <div class="progress" style="width: 80%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info"><span>Kali Linux</span><span>60%</span></div>
-              <div class="progress-bar">
-                <div class="progress" style="width: 60%"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 4. Life Skills -->
-        <div class="skill-category">
-          <h3>Life Skills</h3>
-          <div class="skill-list">
-            <div class="skill-item">
-              <div class="skill-info"><span>Problem Solving</span><span>85%</span></div>
-              <div class="progress-bar">
-                <div class="progress" style="width: 85%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info"><span>Adaptive Learning</span><span>90%</span></div>
-              <div class="progress-bar">
-                <div class="progress" style="width: 90%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info"><span>Team Collaboration</span><span>80%</span></div>
-              <div class="progress-bar">
-                <div class="progress" style="width: 80%"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 5. Soft Skills -->
-        <div class="skill-category">
-          <h3>Soft Skills</h3>
-          <div class="skill-list">
-            <div class="skill-item">
-              <div class="skill-info"><span>Leadership</span><span>85%</span></div>
-              <div class="progress-bar">
-                <div class="progress" style="width: 85%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info"><span>Communication</span><span>90%</span></div>
-              <div class="progress-bar">
-                <div class="progress" style="width: 90%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info"><span>Mentorship</span><span>80%</span></div>
-              <div class="progress-bar">
-                <div class="progress" style="width: 80%"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-      </div>
-    </div>
-  </section>
-  <!-- English Skills Section -->
-  <section id="english-skills" class="section language-skills">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">English Skills</h2>
-      </div>
-
-      <div class="language-grid">
-        <!-- Listening -->
-        <div class="lang-card hidden">
-          <div class="lang-icon">
-            <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="2" fill="none"
-              stroke-linecap="round" stroke-linejoin="round">
-              <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
+        <!-- Nav Socials -->
+        <div class="nav-socials">
+          <a
+            href="https://github.com/Maady321"
+            target="_blank"
+            aria-label="GitHub"
+          >
+            <svg viewBox="0 0 24 24" class="social-icon">
               <path
-                d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z">
-              </path>
+                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+              ></path>
             </svg>
-          </div>
-          <h3>Listening</h3>
-          <span class="lang-badge">B2</span>
-        </div>
-
-        <!-- Speaking -->
-        <div class="lang-card hidden">
-          <div class="lang-icon">
-            <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="2" fill="none"
-              stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-              <path d="M8 9h8"></path>
-              <path d="M8 13h6"></path>
+          </a>
+          <a href="#" target="_blank" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" class="social-icon">
+              <path
+                d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+              ></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
             </svg>
-          </div>
-          <h3>Speaking</h3>
-          <span class="lang-badge">B2</span>
-        </div>
-
-        <!-- Reading -->
-        <div class="lang-card hidden">
-          <div class="lang-icon">
-            <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="2" fill="none"
-              stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-            </svg>
-          </div>
-          <h3>Reading</h3>
-          <span class="lang-badge">B2</span>
-        </div>
-
-        <!-- Writing -->
-        <div class="lang-card hidden">
-          <div class="lang-icon">
-            <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="2" fill="none"
-              stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
-              <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
-              <path d="M2 2l7.5 1.5"></path>
-              <path d="M7 11c.17.17.34.34.5.5"></path>
-            </svg>
-          </div>
-          <h3>Writing</h3>
-          <span class="lang-badge">B2</span>
+          </a>
         </div>
       </div>
+    </nav>
+
+    <!-- Mobile Toggle -->
+    <div class="mobile-toggle-btn">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-  </section>
 
-  <!-- Projects Section -->
-  <section id="projects" class="section projects">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Featured Projects</h2>
+    <!-- Mobile Overlay -->
+    <div class="mobile-overlay"></div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <span class="greeting">Hello, I'm</span>
+          <h1 class="hero-title">Sabari Krishnan</h1>
+          <h2 class="role-title">
+            <span id="typing-text">Web Developer Student</span
+            ><span class="cursor">|</span>
+          </h2>
+          <p class="hero-description">
+            I build accessible, pixel-perfect, and performant web experiences.
+            Passionate about clean code and user-centric design.
+          </p>
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary">View My Work</a>
+            <a href="#contact" class="btn btn-outline">Contact Me</a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="glow-orb orb-1"></div>
+          <div class="photo-editorial-frame">
+            <img
+              src="./assets/DSC00752.jpg"
+              alt="Sabari Krishnan"
+              class="profile-photo-editorial"
+            />
+            <div class="frame-accent"></div>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="projects-grid">
-        <!-- Project 1 -->
-        <article class="project-card">
-          <div class="project-image" style="background-image: url('./assets/medsupply.png');"></div>
-          <div class="project-content">
-            <h3>Medsupply</h3>
-            <p>Inventory management for medical supplies.</p>
-            <div class="tags">
-              <span>HTML</span>
-              <span>CSS</span>
+    <!-- About Section -->
+    <section id="about" class="section about">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">About Me</h2>
+        </div>
+
+        <div class="about-grid">
+          <!-- Bio (Centered) -->
+          <div class="about-bio">
+            <p>
+              I come from a unique, non-technical background. After completing
+              my Plus Two in Livestock Entrepreneurship, I spent time working in
+              a bull farm an experience that taught me resilience and the value
+              of hard work.
+            </p>
+            <p>
+              Today, I am pivoting that dedication into the world of technology
+              as an Aspiring Web Developer Student Intern. I am building
+              expertise in Python, Ruby, and Cyber Security, eager to bring my
+              unique perspective to building secure and efficient digital
+              solutions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Pivot Timeline -->
+    <section id="pivot" class="section pivot">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">The Pivot</h2>
+          <p class="section-description">
+            My journey from the field to the terminal.
+          </p>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-line"></div>
+
+          <!-- Step 1 -->
+          <div class="timeline-item hidden">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">Phase 1</span>
+              <h3>The Bull Farm</h3>
+              <p>
+                Mastered resilience and the value of hard work in a
+                non-technical, high-stakes environment. This is where my grit
+                was built.
+              </p>
+              <span class="timeline-tag">Resilience & Hard Work</span>
             </div>
-            <a href="https://maady321.github.io/project_1_static_webpage/" class="btn-link">View Project &rarr;</a>
           </div>
-        </article>
 
-        <!-- Project 2 -->
-        <article class="project-card">
-          <div class="project-image"></div>
-          <div class="project-content">
-            <h3>Marutha Support</h3>
-            <p>Platform connecting palliative care patients.</p>
-            <div class="tags">
-              <span>FastAPI</span>
-              <span>HTML/CSS JS</span>
+          <!-- Step 2 -->
+          <div class="timeline-item hidden">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">Phase 2</span>
+              <h3>The First Script</h3>
+              <p>
+                Discovered the power of automation and logic. A single spark of
+                curiosity that turned a field-oriented mind toward the digital
+                world.
+              </p>
+              <span class="timeline-tag">The Curiosity</span>
             </div>
-            <a href="#" class="btn-link">View Project &rarr;</a>
           </div>
-        </article>
 
-        <!-- Project 3 -->
-        <article class="project-card">
-          <div class="project-image" style="background-image: url('./assets/salientguard.jpg');"></div>
-          <div class="project-content">
-            <h3>SalientGuard</h3>
-            <p>A hardware for protecting you from attacks through wifi.</p>
-            <div class="tags">
-              <span>C++</span>
-              <span>ESP32</span>
+          <!-- Step 3 -->
+          <div class="timeline-item hidden">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">Phase 3</span>
+              <h3>The Execution</h3>
+              <p>
+                Building real-world solutions like SalientGuard and MedSupply.
+                Applying hacker-level focus to solve complex problems.
+              </p>
+              <span class="timeline-tag">Security & Development</span>
             </div>
-            <a href="#" class="btn-link">View Project &rarr;</a>
           </div>
-        </article>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Life Skills Projects Section -->
-  <section class="section" id="life-skills-projects">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Life Skills - Projects</h2>
+    <!-- Skills Section (New 8 Cards) -->
+    <section id="skills" class="section skills">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Skills & Technologies</h2>
+        </div>
+
+        <div class="skills-category-grid">
+          <!-- 1. Languages -->
+          <div class="skill-category">
+            <h3>Languages</h3>
+            <div class="skill-list">
+              <div class="skill-item">
+                <div class="skill-info"><span>Ruby</span></div>
+                <div class="progress-bar">
+                  <div class="progress" style="width: 70%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>Python</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress" style="width: 50%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>HTML/CSS</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress" style="width: 50%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>JavaScript</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress" style="width: 20%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Backend & DB -->
+          <div class="skill-category">
+            <h3>Backend & DB</h3>
+            <div class="skill-list">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>FastAPI</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress" style="width: 60%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>Ruby on Rails</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress" style="width: 50%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>PostgreSQL</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress" style="width: 50%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. Security -->
+          <div class="skill-category">
+            <h3>Security</h3>
+            <div class="skill-list">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>Ethical Hacking</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress" style="width: 80%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>Kali Linux</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress" style="width: 60%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. Life Skills -->
+          <div class="skill-category">
+            <h3>Life Skills</h3>
+            <div class="skill-list">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>Problem Solving</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress" style="width: 85%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>Adaptive Learning</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress" style="width: 90%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>Team Collaboration</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress" style="width: 80%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. Soft Skills -->
+          <div class="skill-category">
+            <h3>Soft Skills</h3>
+            <div class="skill-list">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>Leadership</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress" style="width: 85%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>Communication</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress" style="width: 90%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>Mentorship</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress" style="width: 80%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="life-skill-grid">
-        <!-- Project 1 -->
-        <article class="project-card life-card">
-          <div class="project-image" style="background-image: url('./assets/up.jpg');"></div>
-          <div class="project-content">
-            <h3>First Project Presentation</h3>
-            <p>Overcame stage fear with team support and delivered a confident presentation.</p>
-          </div>
-        </article>
+    </section>
+    <!-- English Skills Section -->
+    <section id="english-skills" class="section language-skills">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">English Skills</h2>
+        </div>
 
-        <!-- Project 2 -->
-        <article class="project-card life-card">
-          <div class="project-image" style="background-image: url('./assets/pbc.jpeg');"></div>
-          <div class="project-content">
-            <h3>Product Building Challenge</h3>
-            <p>Learned persistence by re-presenting ideas after initial rejection.</p>
+        <div class="language-grid">
+          <!-- Listening -->
+          <div class="lang-card hidden">
+            <div class="lang-icon">
+              <svg
+                viewBox="0 0 24 24"
+                width="32"
+                height="32"
+                stroke="currentColor"
+                stroke-width="2"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
+                <path
+                  d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"
+                ></path>
+              </svg>
+            </div>
+            <h3>Listening</h3>
+            <span class="lang-badge">B1</span>
           </div>
-        </article>
+
+          <!-- Speaking -->
+          <div class="lang-card hidden">
+            <div class="lang-icon">
+              <svg
+                viewBox="0 0 24 24"
+                width="32"
+                height="32"
+                stroke="currentColor"
+                stroke-width="2"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                ></path>
+                <path d="M8 9h8"></path>
+                <path d="M8 13h6"></path>
+              </svg>
+            </div>
+            <h3>Speaking</h3>
+            <span class="lang-badge">B1</span>
+          </div>
+
+          <!-- Reading -->
+          <div class="lang-card hidden">
+            <div class="lang-icon">
+              <svg
+                viewBox="0 0 24 24"
+                width="32"
+                height="32"
+                stroke="currentColor"
+                stroke-width="2"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                <path
+                  d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"
+                ></path>
+              </svg>
+            </div>
+            <h3>Reading</h3>
+            <span class="lang-badge">B1</span>
+          </div>
+
+          <!-- Writing -->
+          <div class="lang-card hidden">
+            <div class="lang-icon">
+              <svg
+                viewBox="0 0 24 24"
+                width="32"
+                height="32"
+                stroke="currentColor"
+                stroke-width="2"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                <path d="M2 2l7.5 1.5"></path>
+                <path d="M7 11c.17.17.34.34.5.5"></path>
+              </svg>
+            </div>
+            <h3>Writing</h3>
+            <span class="lang-badge">B1</span>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Blogs Section -->
-  <section id="blogs" class="section blogs">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Recent Writings</h2>
+    <!-- Projects Section -->
+    <section id="projects" class="section projects">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Featured Projects</h2>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1 -->
+          <article class="project-card">
+            <div
+              class="project-image"
+              style="background-image: url(&quot;./assets/medsupply.png&quot;)"
+            ></div>
+            <div class="project-content">
+              <h3>Medsupply</h3>
+              <p>Inventory management for medical supplies.</p>
+              <div class="tags">
+                <span>HTML</span>
+                <span>CSS</span>
+              </div>
+              <a
+                href="https://maady321.github.io/project_1_static_webpage/"
+                class="btn-link"
+                >View Project &rarr;</a
+              >
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card">
+            <div class="project-image"></div>
+            <div class="project-content">
+              <h3>Marutha Support</h3>
+              <p>Platform connecting palliative care patients.</p>
+              <div class="tags">
+                <span>FastAPI</span>
+                <span>HTML/CSS JS</span>
+              </div>
+              <a href="#" class="btn-link">View Project &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-card">
+            <div
+              class="project-image"
+              style="
+                background-image: url(&quot;./assets/salientguard.jpg&quot;);
+              "
+            ></div>
+            <div class="project-content">
+              <h3>SalientGuard</h3>
+              <p>A hardware for protecting you from attacks through wifi.</p>
+              <div class="tags">
+                <span>C++</span>
+                <span>ESP32</span>
+              </div>
+              <a href="#" class="btn-link">View Project &rarr;</a>
+            </div>
+          </article>
+        </div>
       </div>
-      <div class="projects-grid">
-        <!-- Blog 1 -->
-        <article class="project-card blog-card">
-          <div class="project-content">
-            <h3></h3>
-            <p></p>
-            <a href="blog-1.html" class="btn-link">Read Article &rarr;</a>
-          </div>
-        </article>
-        <!-- Blog 2 -->
-        <article class="project-card blog-card">
-          <div class="project-content">
-            <h3> </h3>
-            <p> </p>
-            <a href="blog-2.html" class="btn-link">Read Article &rarr;</a>
-          </div>
-        </article>
-        <!-- Blog 3 -->
-        <article class="project-card blog-card">
-          <div class="project-content">
-            <h3>QR-Code Phishing: Ethical Lessons</h3>
-            <p>Understanding the Threat Responsible</p>
-            <a href="blog-3.html" class="btn-link">Read Article &rarr;</a>
-          </div>
-        </article>
-        <!-- Blog 4 -->
-        <article class="project-card blog-card">
-          <div class="project-content">
-            <h3></h3>
-            <p></p>
-            <a href="blog-4.html" class="btn-link">Read Article &rarr;</a>
-          </div>
-        </article>
-        <!-- Blog 5 -->
-        <article class="project-card blog-card">
-          <div class="project-content">
-            <h3></h3>
-            <p></p>
-            <a href="blog-5.html" class="btn-link">Read Article &rarr;</a>
-          </div>
-        </article>
+    </section>
+
+    <!-- Life Skills Projects Section -->
+    <section class="section" id="life-skills-projects">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Life Skills - Projects</h2>
+        </div>
+        <div class="life-skill-grid">
+          <!-- Project 1 -->
+          <article class="project-card life-card">
+            <div
+              class="project-image"
+              style="background-image: url(&quot;./assets/up.jpg&quot;)"
+            ></div>
+            <div class="project-content">
+              <h3>First Project Presentation</h3>
+              <p>
+                Overcame stage fear with team support and delivered a confident
+                presentation.
+              </p>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card life-card">
+            <div
+              class="project-image"
+              style="background-image: url(&quot;./assets/pbc.jpeg&quot;)"
+            ></div>
+            <div class="project-content">
+              <h3>Product Building Challenge</h3>
+              <p>
+                Learned persistence by re-presenting ideas after initial
+                rejection.
+              </p>
+            </div>
+          </article>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Certificates Section -->
-  <section id="certificates" class="section certificates">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Certifications</h2>
+    <!-- Blogs Section -->
+    <section id="blogs" class="section blogs">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Recent Writings</h2>
+        </div>
+        <div class="view-all-blogs-container">
+          <a href="blogs.html" class="blog-tab-btn">
+            <span class="tab-icon">
+              <svg viewBox="0 0 24 24" class="nav-icon">
+                <path
+                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                ></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </span>
+            <span>View All My Blogs</span>
+            <span class="arrow">&rarr;</span>
+          </a>
+        </div>
       </div>
-      <div class="projects-grid">
-        <!-- Certificate 1 -->
-        <article class="project-card certificate-card">
-          <div class="certificate-image" style="background-image: url('./assets/certificate-hacking.png');"></div>
-          <div class="project-content">
-            <h3>Ethical Hacking & Cybersecurity</h3>
-            <p>2-Hour Workshop by VaultofCodes - 26/12/2025</p>
-          </div>
-        </article>
-        <!-- Certificate 2 -->
-        <article class="project-card certificate-card">
-          <div class="certificate-image"></div>
-          <div class="project-content">
-            <h3></h3>
-            <p></p>
-          </div>
-        </article>
-        <!-- Certificate 3 -->
-        <article class="project-card certificate-card">
-          <div class="certificate-image"></div>
-          <div class="project-content">
-            <h3></h3>
-            <p></p>
-          </div>
-        </article>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="section certificates">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Certifications</h2>
+        </div>
+        <div class="projects-grid">
+          <!-- Certificate 1 -->
+          <article class="project-card certificate-card">
+            <div
+              class="certificate-image"
+              style="
+                background-image: url(&quot;./assets/certificate-hacking.png&quot;);
+              "
+            ></div>
+            <div class="project-content">
+              <h3>Ethical Hacking & Cybersecurity</h3>
+              <p>2-Hour Workshop by VaultofCodes - 26/12/2025</p>
+            </div>
+          </article>
+          <!-- Certificate 2 -->
+          <article class="project-card certificate-card">
+            <div class="certificate-image"></div>
+            <div class="project-content">
+              <h3></h3>
+              <p></p>
+            </div>
+          </article>
+          <!-- Certificate 3 -->
+          <article class="project-card certificate-card">
+            <div class="certificate-image"></div>
+            <div class="project-content">
+              <h3></h3>
+              <p></p>
+            </div>
+          </article>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="section contact">
-    <div class="container contact-container">
-      <h2 class="section-title">Get In Touch</h2>
-      <p class="contact-text">
-        I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll try my
-        best to get back to you!
-      </p>
-      <a href="mailto:sabarikrishnan994@gmail.com" class="btn btn-primary">Say Hello</a>
-    </div>
-  </section>
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+      <div class="container contact-container">
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="contact-text">
+          I'm currently looking for new opportunities. Whether you have a
+          question or just want to say hi, I'll try my best to get back to you!
+        </p>
+        <a href="mailto:sabarikrishnan994@gmail.com" class="btn btn-primary"
+          >Say Hello</a
+        >
+      </div>
+    </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2026 Sabari Krishnan. All rights reserved.</p>
-    </div>
-  </footer>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2026 Sabari Krishnan. All rights reserved.</p>
+      </div>
+    </footer>
 
-  <script src="script.js"></script>
-</body>
-
+    <script src="script.js"></script>
+  </body>
 </html>
